@@ -1,0 +1,39 @@
+# Local credentials and environment files
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!*.env.example
+credentials.json
+credentials.*.json
+secrets.json
+
+# Private keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local logs and operating system files
+*.log
+Thumbs.db
+Desktop.ini
+.DS_Store
