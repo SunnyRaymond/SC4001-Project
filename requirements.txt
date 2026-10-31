@@ -1,0 +1,11 @@
+# Install torch first from the CUDA 11.8 index (see jobs/setup_env.sh):
+#   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu118
+# Exact versions used on TC1 are recorded in requirements-lock.txt.
+open_clip_torch==3.3.0
+huggingface_hub
+pyarrow
+pandas
+scikit-learn
+scipy
+matplotlib
+pyyaml
