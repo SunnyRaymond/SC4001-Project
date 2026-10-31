@@ -1,0 +1,481 @@
+method,target,K,config,source_acc_mean,selected
+A1,Art,1,"{""lam"": 1e-05}",0.537176,False
+A1,Art,1,"{""lam"": 0.0001}",0.534657,False
+A1,Art,1,"{""lam"": 0.001}",0.540630,True
+A1,Art,1,"{""lam"": 0.01}",0.539040,False
+A1,Art,1,"{""lam"": 0.1}",0.534333,False
+A1,Art,2,"{""lam"": 1e-05}",0.663049,False
+A1,Art,2,"{""lam"": 0.0001}",0.663767,True
+A1,Art,2,"{""lam"": 0.001}",0.662522,False
+A1,Art,2,"{""lam"": 0.01}",0.629157,False
+A1,Art,2,"{""lam"": 0.1}",0.622959,False
+A1,Art,4,"{""lam"": 1e-05}",0.748948,False
+A1,Art,4,"{""lam"": 0.0001}",0.751502,True
+A1,Art,4,"{""lam"": 0.001}",0.736950,False
+A1,Art,4,"{""lam"": 0.01}",0.697415,False
+A1,Art,4,"{""lam"": 0.1}",0.688443,False
+A1,Art,8,"{""lam"": 1e-05}",0.811464,False
+A1,Art,8,"{""lam"": 0.0001}",0.813402,True
+A1,Art,8,"{""lam"": 0.001}",0.788735,False
+A1,Art,8,"{""lam"": 0.01}",0.754480,False
+A1,Art,8,"{""lam"": 0.1}",0.747119,False
+A1,Clipart,1,"{""lam"": 1e-05}",0.550570,False
+A1,Clipart,1,"{""lam"": 0.0001}",0.548308,False
+A1,Clipart,1,"{""lam"": 0.001}",0.551099,True
+A1,Clipart,1,"{""lam"": 0.01}",0.549468,False
+A1,Clipart,1,"{""lam"": 0.1}",0.544342,False
+A1,Clipart,2,"{""lam"": 1e-05}",0.691188,True
+A1,Clipart,2,"{""lam"": 0.0001}",0.690948,False
+A1,Clipart,2,"{""lam"": 0.001}",0.686151,False
+A1,Clipart,2,"{""lam"": 0.01}",0.649566,False
+A1,Clipart,2,"{""lam"": 0.1}",0.642337,False
+A1,Clipart,4,"{""lam"": 1e-05}",0.775895,False
+A1,Clipart,4,"{""lam"": 0.0001}",0.777237,True
+A1,Clipart,4,"{""lam"": 0.001}",0.761089,False
+A1,Clipart,4,"{""lam"": 0.01}",0.718566,False
+A1,Clipart,4,"{""lam"": 0.1}",0.711455,False
+A1,Clipart,8,"{""lam"": 1e-05}",0.831375,True
+A1,Clipart,8,"{""lam"": 0.0001}",0.830031,False
+A1,Clipart,8,"{""lam"": 0.001}",0.807974,False
+A1,Clipart,8,"{""lam"": 0.01}",0.771894,False
+A1,Clipart,8,"{""lam"": 0.1}",0.766834,False
+A1,Product,1,"{""lam"": 1e-05}",0.454597,False
+A1,Product,1,"{""lam"": 0.0001}",0.451671,False
+A1,Product,1,"{""lam"": 0.001}",0.455225,True
+A1,Product,1,"{""lam"": 0.01}",0.453394,False
+A1,Product,1,"{""lam"": 0.1}",0.448811,False
+A1,Product,2,"{""lam"": 1e-05}",0.590016,True
+A1,Product,2,"{""lam"": 0.0001}",0.589954,False
+A1,Product,2,"{""lam"": 0.001}",0.585504,False
+A1,Product,2,"{""lam"": 0.01}",0.552205,False
+A1,Product,2,"{""lam"": 0.1}",0.546025,False
+A1,Product,4,"{""lam"": 1e-05}",0.685234,False
+A1,Product,4,"{""lam"": 0.0001}",0.688360,True
+A1,Product,4,"{""lam"": 0.001}",0.669937,False
+A1,Product,4,"{""lam"": 0.01}",0.627967,False
+A1,Product,4,"{""lam"": 0.1}",0.619275,False
+A1,Product,8,"{""lam"": 1e-05}",0.757531,True
+A1,Product,8,"{""lam"": 0.0001}",0.757488,False
+A1,Product,8,"{""lam"": 0.001}",0.728932,False
+A1,Product,8,"{""lam"": 0.01}",0.690877,False
+A1,Product,8,"{""lam"": 0.1}",0.684274,False
+A1,Real World,1,"{""lam"": 1e-05}",0.482925,False
+A1,Real World,1,"{""lam"": 0.0001}",0.482026,False
+A1,Real World,1,"{""lam"": 0.001}",0.486578,True
+A1,Real World,1,"{""lam"": 0.01}",0.482140,False
+A1,Real World,1,"{""lam"": 0.1}",0.477365,False
+A1,Real World,2,"{""lam"": 1e-05}",0.622939,True
+A1,Real World,2,"{""lam"": 0.0001}",0.622930,False
+A1,Real World,2,"{""lam"": 0.001}",0.620072,False
+A1,Real World,2,"{""lam"": 0.01}",0.586170,False
+A1,Real World,2,"{""lam"": 0.1}",0.579668,False
+A1,Real World,4,"{""lam"": 1e-05}",0.709026,False
+A1,Real World,4,"{""lam"": 0.0001}",0.710191,True
+A1,Real World,4,"{""lam"": 0.001}",0.691711,False
+A1,Real World,4,"{""lam"": 0.01}",0.649939,False
+A1,Real World,4,"{""lam"": 0.1}",0.640983,False
+A1,Real World,8,"{""lam"": 1e-05}",0.776025,True
+A1,Real World,8,"{""lam"": 0.0001}",0.775345,False
+A1,Real World,8,"{""lam"": 0.001}",0.747435,False
+A1,Real World,8,"{""lam"": 0.01}",0.708660,False
+A1,Real World,8,"{""lam"": 0.1}",0.701581,False
+A2,Art,1,"{""lr"": 0.0001, ""steps"": 50}",0.806389,True
+A2,Art,1,"{""lr"": 0.0001, ""steps"": 200}",0.804709,False
+A2,Art,1,"{""lr"": 0.0001, ""steps"": 500}",0.802030,False
+A2,Art,1,"{""lr"": 0.001, ""steps"": 50}",0.752243,False
+A2,Art,1,"{""lr"": 0.001, ""steps"": 200}",0.759927,False
+A2,Art,1,"{""lr"": 0.001, ""steps"": 500}",0.764493,False
+A2,Art,1,"{""lr"": 0.01, ""steps"": 50}",0.433331,False
+A2,Art,1,"{""lr"": 0.01, ""steps"": 200}",0.435855,False
+A2,Art,1,"{""lr"": 0.01, ""steps"": 500}",0.438318,False
+A2,Art,2,"{""lr"": 0.0001, ""steps"": 50}",0.819890,False
+A2,Art,2,"{""lr"": 0.0001, ""steps"": 200}",0.820262,True
+A2,Art,2,"{""lr"": 0.0001, ""steps"": 500}",0.816963,False
+A2,Art,2,"{""lr"": 0.001, ""steps"": 50}",0.787984,False
+A2,Art,2,"{""lr"": 0.001, ""steps"": 200}",0.793914,False
+A2,Art,2,"{""lr"": 0.001, ""steps"": 500}",0.794169,False
+A2,Art,2,"{""lr"": 0.01, ""steps"": 50}",0.527653,False
+A2,Art,2,"{""lr"": 0.01, ""steps"": 200}",0.533579,False
+A2,Art,2,"{""lr"": 0.01, ""steps"": 500}",0.538534,False
+A2,Art,4,"{""lr"": 0.0001, ""steps"": 50}",0.831654,False
+A2,Art,4,"{""lr"": 0.0001, ""steps"": 200}",0.833917,True
+A2,Art,4,"{""lr"": 0.0001, ""steps"": 500}",0.832144,False
+A2,Art,4,"{""lr"": 0.001, ""steps"": 50}",0.815663,False
+A2,Art,4,"{""lr"": 0.001, ""steps"": 200}",0.819088,False
+A2,Art,4,"{""lr"": 0.001, ""steps"": 500}",0.818881,False
+A2,Art,4,"{""lr"": 0.01, ""steps"": 50}",0.647299,False
+A2,Art,4,"{""lr"": 0.01, ""steps"": 200}",0.655985,False
+A2,Art,4,"{""lr"": 0.01, ""steps"": 500}",0.661479,False
+A2,Art,8,"{""lr"": 0.0001, ""steps"": 50}",0.844548,False
+A2,Art,8,"{""lr"": 0.0001, ""steps"": 200}",0.850095,True
+A2,Art,8,"{""lr"": 0.0001, ""steps"": 500}",0.847376,False
+A2,Art,8,"{""lr"": 0.001, ""steps"": 50}",0.839496,False
+A2,Art,8,"{""lr"": 0.001, ""steps"": 200}",0.842266,False
+A2,Art,8,"{""lr"": 0.001, ""steps"": 500}",0.841427,False
+A2,Art,8,"{""lr"": 0.01, ""steps"": 50}",0.754413,False
+A2,Art,8,"{""lr"": 0.01, ""steps"": 200}",0.762125,False
+A2,Art,8,"{""lr"": 0.01, ""steps"": 500}",0.767193,False
+A2,Clipart,1,"{""lr"": 0.0001, ""steps"": 50}",0.853334,True
+A2,Clipart,1,"{""lr"": 0.0001, ""steps"": 200}",0.852228,False
+A2,Clipart,1,"{""lr"": 0.0001, ""steps"": 500}",0.850640,False
+A2,Clipart,1,"{""lr"": 0.001, ""steps"": 50}",0.796173,False
+A2,Clipart,1,"{""lr"": 0.001, ""steps"": 200}",0.805742,False
+A2,Clipart,1,"{""lr"": 0.001, ""steps"": 500}",0.813200,False
+A2,Clipart,1,"{""lr"": 0.01, ""steps"": 50}",0.435631,False
+A2,Clipart,1,"{""lr"": 0.01, ""steps"": 200}",0.437081,False
+A2,Clipart,1,"{""lr"": 0.01, ""steps"": 500}",0.439257,False
+A2,Clipart,2,"{""lr"": 0.0001, ""steps"": 50}",0.861217,False
+A2,Clipart,2,"{""lr"": 0.0001, ""steps"": 200}",0.863470,True
+A2,Clipart,2,"{""lr"": 0.0001, ""steps"": 500}",0.861405,False
+A2,Clipart,2,"{""lr"": 0.001, ""steps"": 50}",0.828314,False
+A2,Clipart,2,"{""lr"": 0.001, ""steps"": 200}",0.835441,False
+A2,Clipart,2,"{""lr"": 0.001, ""steps"": 500}",0.838488,False
+A2,Clipart,2,"{""lr"": 0.01, ""steps"": 50}",0.552555,False
+A2,Clipart,2,"{""lr"": 0.01, ""steps"": 200}",0.557387,False
+A2,Clipart,2,"{""lr"": 0.01, ""steps"": 500}",0.561858,False
+A2,Clipart,4,"{""lr"": 0.0001, ""steps"": 50}",0.870091,False
+A2,Clipart,4,"{""lr"": 0.0001, ""steps"": 200}",0.874067,True
+A2,Clipart,4,"{""lr"": 0.0001, ""steps"": 500}",0.871819,False
+A2,Clipart,4,"{""lr"": 0.001, ""steps"": 50}",0.855413,False
+A2,Clipart,4,"{""lr"": 0.001, ""steps"": 200}",0.858565,False
+A2,Clipart,4,"{""lr"": 0.001, ""steps"": 500}",0.858620,False
+A2,Clipart,4,"{""lr"": 0.01, ""steps"": 50}",0.676799,False
+A2,Clipart,4,"{""lr"": 0.01, ""steps"": 200}",0.683621,False
+A2,Clipart,4,"{""lr"": 0.01, ""steps"": 500}",0.688869,False
+A2,Clipart,8,"{""lr"": 0.0001, ""steps"": 50}",0.878586,False
+A2,Clipart,8,"{""lr"": 0.0001, ""steps"": 200}",0.883070,True
+A2,Clipart,8,"{""lr"": 0.0001, ""steps"": 500}",0.881273,False
+A2,Clipart,8,"{""lr"": 0.001, ""steps"": 50}",0.871586,False
+A2,Clipart,8,"{""lr"": 0.001, ""steps"": 200}",0.874135,False
+A2,Clipart,8,"{""lr"": 0.001, ""steps"": 500}",0.873991,False
+A2,Clipart,8,"{""lr"": 0.01, ""steps"": 50}",0.767309,False
+A2,Clipart,8,"{""lr"": 0.01, ""steps"": 200}",0.773650,False
+A2,Clipart,8,"{""lr"": 0.01, ""steps"": 500}",0.778795,False
+A2,Product,1,"{""lr"": 0.0001, ""steps"": 50}",0.780745,True
+A2,Product,1,"{""lr"": 0.0001, ""steps"": 200}",0.778369,False
+A2,Product,1,"{""lr"": 0.0001, ""steps"": 500}",0.775386,False
+A2,Product,1,"{""lr"": 0.001, ""steps"": 50}",0.714496,False
+A2,Product,1,"{""lr"": 0.001, ""steps"": 200}",0.723262,False
+A2,Product,1,"{""lr"": 0.001, ""steps"": 500}",0.729973,False
+A2,Product,1,"{""lr"": 0.01, ""steps"": 50}",0.373497,False
+A2,Product,1,"{""lr"": 0.01, ""steps"": 200}",0.374448,False
+A2,Product,1,"{""lr"": 0.01, ""steps"": 500}",0.375867,False
+A2,Product,2,"{""lr"": 0.0001, ""steps"": 50}",0.791948,True
+A2,Product,2,"{""lr"": 0.0001, ""steps"": 200}",0.790881,False
+A2,Product,2,"{""lr"": 0.0001, ""steps"": 500}",0.786362,False
+A2,Product,2,"{""lr"": 0.001, ""steps"": 50}",0.744233,False
+A2,Product,2,"{""lr"": 0.001, ""steps"": 200}",0.753927,False
+A2,Product,2,"{""lr"": 0.001, ""steps"": 500}",0.756114,False
+A2,Product,2,"{""lr"": 0.01, ""steps"": 50}",0.474328,False
+A2,Product,2,"{""lr"": 0.01, ""steps"": 200}",0.477745,False
+A2,Product,2,"{""lr"": 0.01, ""steps"": 500}",0.481077,False
+A2,Product,4,"{""lr"": 0.0001, ""steps"": 50}",0.804176,False
+A2,Product,4,"{""lr"": 0.0001, ""steps"": 200}",0.804936,True
+A2,Product,4,"{""lr"": 0.0001, ""steps"": 500}",0.801077,False
+A2,Product,4,"{""lr"": 0.001, ""steps"": 50}",0.779007,False
+A2,Product,4,"{""lr"": 0.001, ""steps"": 200}",0.783589,False
+A2,Product,4,"{""lr"": 0.001, ""steps"": 500}",0.783504,False
+A2,Product,4,"{""lr"": 0.01, ""steps"": 50}",0.582694,False
+A2,Product,4,"{""lr"": 0.01, ""steps"": 200}",0.590805,False
+A2,Product,4,"{""lr"": 0.01, ""steps"": 500}",0.596487,False
+A2,Product,8,"{""lr"": 0.0001, ""steps"": 50}",0.816774,False
+A2,Product,8,"{""lr"": 0.0001, ""steps"": 200}",0.820076,True
+A2,Product,8,"{""lr"": 0.0001, ""steps"": 500}",0.816949,False
+A2,Product,8,"{""lr"": 0.001, ""steps"": 50}",0.804443,False
+A2,Product,8,"{""lr"": 0.001, ""steps"": 200}",0.808154,False
+A2,Product,8,"{""lr"": 0.001, ""steps"": 500}",0.807548,False
+A2,Product,8,"{""lr"": 0.01, ""steps"": 50}",0.694757,False
+A2,Product,8,"{""lr"": 0.01, ""steps"": 200}",0.702552,False
+A2,Product,8,"{""lr"": 0.01, ""steps"": 500}",0.708845,False
+A2,Real World,1,"{""lr"": 0.0001, ""steps"": 50}",0.780307,True
+A2,Real World,1,"{""lr"": 0.0001, ""steps"": 200}",0.778682,False
+A2,Real World,1,"{""lr"": 0.0001, ""steps"": 500}",0.775621,False
+A2,Real World,1,"{""lr"": 0.001, ""steps"": 50}",0.716418,False
+A2,Real World,1,"{""lr"": 0.001, ""steps"": 200}",0.726735,False
+A2,Real World,1,"{""lr"": 0.001, ""steps"": 500}",0.733235,False
+A2,Real World,1,"{""lr"": 0.01, ""steps"": 50}",0.386324,False
+A2,Real World,1,"{""lr"": 0.01, ""steps"": 200}",0.387570,False
+A2,Real World,1,"{""lr"": 0.01, ""steps"": 500}",0.389427,False
+A2,Real World,2,"{""lr"": 0.0001, ""steps"": 50}",0.794342,False
+A2,Real World,2,"{""lr"": 0.0001, ""steps"": 200}",0.794773,True
+A2,Real World,2,"{""lr"": 0.0001, ""steps"": 500}",0.791439,False
+A2,Real World,2,"{""lr"": 0.001, ""steps"": 50}",0.752240,False
+A2,Real World,2,"{""lr"": 0.001, ""steps"": 200}",0.762313,False
+A2,Real World,2,"{""lr"": 0.001, ""steps"": 500}",0.764405,False
+A2,Real World,2,"{""lr"": 0.01, ""steps"": 50}",0.498795,False
+A2,Real World,2,"{""lr"": 0.01, ""steps"": 200}",0.503971,False
+A2,Real World,2,"{""lr"": 0.01, ""steps"": 500}",0.508526,False
+A2,Real World,4,"{""lr"": 0.0001, ""steps"": 50}",0.807430,False
+A2,Real World,4,"{""lr"": 0.0001, ""steps"": 200}",0.810539,True
+A2,Real World,4,"{""lr"": 0.0001, ""steps"": 500}",0.808032,False
+A2,Real World,4,"{""lr"": 0.001, ""steps"": 50}",0.787677,False
+A2,Real World,4,"{""lr"": 0.001, ""steps"": 200}",0.792562,False
+A2,Real World,4,"{""lr"": 0.001, ""steps"": 500}",0.793225,False
+A2,Real World,4,"{""lr"": 0.01, ""steps"": 50}",0.613851,False
+A2,Real World,4,"{""lr"": 0.01, ""steps"": 200}",0.621882,False
+A2,Real World,4,"{""lr"": 0.01, ""steps"": 500}",0.627010,False
+A2,Real World,8,"{""lr"": 0.0001, ""steps"": 50}",0.820340,False
+A2,Real World,8,"{""lr"": 0.0001, ""steps"": 200}",0.826269,True
+A2,Real World,8,"{""lr"": 0.0001, ""steps"": 500}",0.824532,False
+A2,Real World,8,"{""lr"": 0.001, ""steps"": 50}",0.814534,False
+A2,Real World,8,"{""lr"": 0.001, ""steps"": 200}",0.817659,False
+A2,Real World,8,"{""lr"": 0.001, ""steps"": 500}",0.817430,False
+A2,Real World,8,"{""lr"": 0.01, ""steps"": 50}",0.716223,False
+A2,Real World,8,"{""lr"": 0.01, ""steps"": 200}",0.723629,False
+A2,Real World,8,"{""lr"": 0.01, ""steps"": 500}",0.729319,False
+A4,Art,1,"{""alpha"": 0.5, ""beta"": 1.0}",0.798591,False
+A4,Art,1,"{""alpha"": 0.5, ""beta"": 3.0}",0.798848,False
+A4,Art,1,"{""alpha"": 0.5, ""beta"": 5.5}",0.798848,False
+A4,Art,1,"{""alpha"": 0.5, ""beta"": 8.0}",0.798704,False
+A4,Art,1,"{""alpha"": 1.0, ""beta"": 1.0}",0.799078,False
+A4,Art,1,"{""alpha"": 1.0, ""beta"": 3.0}",0.800197,False
+A4,Art,1,"{""alpha"": 1.0, ""beta"": 5.5}",0.799966,False
+A4,Art,1,"{""alpha"": 1.0, ""beta"": 8.0}",0.799707,False
+A4,Art,1,"{""alpha"": 2.0, ""beta"": 1.0}",0.800714,False
+A4,Art,1,"{""alpha"": 2.0, ""beta"": 3.0}",0.803006,False
+A4,Art,1,"{""alpha"": 2.0, ""beta"": 5.5}",0.802518,False
+A4,Art,1,"{""alpha"": 2.0, ""beta"": 8.0}",0.801140,False
+A4,Art,1,"{""alpha"": 5.0, ""beta"": 1.0}",0.804118,False
+A4,Art,1,"{""alpha"": 5.0, ""beta"": 3.0}",0.805871,True
+A4,Art,1,"{""alpha"": 5.0, ""beta"": 5.5}",0.805383,False
+A4,Art,1,"{""alpha"": 5.0, ""beta"": 8.0}",0.804731,False
+A4,Art,2,"{""alpha"": 0.5, ""beta"": 1.0}",0.799396,False
+A4,Art,2,"{""alpha"": 0.5, ""beta"": 3.0}",0.800541,False
+A4,Art,2,"{""alpha"": 0.5, ""beta"": 5.5}",0.800657,False
+A4,Art,2,"{""alpha"": 0.5, ""beta"": 8.0}",0.800113,False
+A4,Art,2,"{""alpha"": 1.0, ""beta"": 1.0}",0.800743,False
+A4,Art,2,"{""alpha"": 1.0, ""beta"": 3.0}",0.803128,False
+A4,Art,2,"{""alpha"": 1.0, ""beta"": 5.5}",0.803212,False
+A4,Art,2,"{""alpha"": 1.0, ""beta"": 8.0}",0.802321,False
+A4,Art,2,"{""alpha"": 2.0, ""beta"": 1.0}",0.803670,False
+A4,Art,2,"{""alpha"": 2.0, ""beta"": 3.0}",0.807223,False
+A4,Art,2,"{""alpha"": 2.0, ""beta"": 5.5}",0.807171,False
+A4,Art,2,"{""alpha"": 2.0, ""beta"": 8.0}",0.806571,False
+A4,Art,2,"{""alpha"": 5.0, ""beta"": 1.0}",0.808909,False
+A4,Art,2,"{""alpha"": 5.0, ""beta"": 3.0}",0.811135,False
+A4,Art,2,"{""alpha"": 5.0, ""beta"": 5.5}",0.811974,True
+A4,Art,2,"{""alpha"": 5.0, ""beta"": 8.0}",0.811497,False
+A4,Art,4,"{""alpha"": 0.5, ""beta"": 1.0}",0.800831,False
+A4,Art,4,"{""alpha"": 0.5, ""beta"": 3.0}",0.802640,False
+A4,Art,4,"{""alpha"": 0.5, ""beta"": 5.5}",0.802608,False
+A4,Art,4,"{""alpha"": 0.5, ""beta"": 8.0}",0.802060,False
+A4,Art,4,"{""alpha"": 1.0, ""beta"": 1.0}",0.803469,False
+A4,Art,4,"{""alpha"": 1.0, ""beta"": 3.0}",0.807744,False
+A4,Art,4,"{""alpha"": 1.0, ""beta"": 5.5}",0.808093,False
+A4,Art,4,"{""alpha"": 1.0, ""beta"": 8.0}",0.806315,False
+A4,Art,4,"{""alpha"": 2.0, ""beta"": 1.0}",0.808603,False
+A4,Art,4,"{""alpha"": 2.0, ""beta"": 3.0}",0.812498,False
+A4,Art,4,"{""alpha"": 2.0, ""beta"": 5.5}",0.813018,False
+A4,Art,4,"{""alpha"": 2.0, ""beta"": 8.0}",0.811504,False
+A4,Art,4,"{""alpha"": 5.0, ""beta"": 1.0}",0.814072,False
+A4,Art,4,"{""alpha"": 5.0, ""beta"": 3.0}",0.815998,False
+A4,Art,4,"{""alpha"": 5.0, ""beta"": 5.5}",0.817354,False
+A4,Art,4,"{""alpha"": 5.0, ""beta"": 8.0}",0.817606,True
+A4,Art,8,"{""alpha"": 0.5, ""beta"": 1.0}",0.803280,False
+A4,Art,8,"{""alpha"": 0.5, ""beta"": 3.0}",0.808417,False
+A4,Art,8,"{""alpha"": 0.5, ""beta"": 5.5}",0.807900,False
+A4,Art,8,"{""alpha"": 0.5, ""beta"": 8.0}",0.806376,False
+A4,Art,8,"{""alpha"": 1.0, ""beta"": 1.0}",0.809334,False
+A4,Art,8,"{""alpha"": 1.0, ""beta"": 3.0}",0.815021,False
+A4,Art,8,"{""alpha"": 1.0, ""beta"": 5.5}",0.815139,False
+A4,Art,8,"{""alpha"": 1.0, ""beta"": 8.0}",0.813100,False
+A4,Art,8,"{""alpha"": 2.0, ""beta"": 1.0}",0.815475,False
+A4,Art,8,"{""alpha"": 2.0, ""beta"": 3.0}",0.820519,False
+A4,Art,8,"{""alpha"": 2.0, ""beta"": 5.5}",0.822220,False
+A4,Art,8,"{""alpha"": 2.0, ""beta"": 8.0}",0.820765,False
+A4,Art,8,"{""alpha"": 5.0, ""beta"": 1.0}",0.821814,False
+A4,Art,8,"{""alpha"": 5.0, ""beta"": 3.0}",0.822680,False
+A4,Art,8,"{""alpha"": 5.0, ""beta"": 5.5}",0.826370,False
+A4,Art,8,"{""alpha"": 5.0, ""beta"": 8.0}",0.828548,True
+A4,Clipart,1,"{""alpha"": 0.5, ""beta"": 1.0}",0.845800,False
+A4,Clipart,1,"{""alpha"": 0.5, ""beta"": 3.0}",0.846059,False
+A4,Clipart,1,"{""alpha"": 0.5, ""beta"": 5.5}",0.846147,False
+A4,Clipart,1,"{""alpha"": 0.5, ""beta"": 8.0}",0.846410,False
+A4,Clipart,1,"{""alpha"": 1.0, ""beta"": 1.0}",0.846492,False
+A4,Clipart,1,"{""alpha"": 1.0, ""beta"": 3.0}",0.847529,False
+A4,Clipart,1,"{""alpha"": 1.0, ""beta"": 5.5}",0.846977,False
+A4,Clipart,1,"{""alpha"": 1.0, ""beta"": 8.0}",0.847155,False
+A4,Clipart,1,"{""alpha"": 2.0, ""beta"": 1.0}",0.849036,False
+A4,Clipart,1,"{""alpha"": 2.0, ""beta"": 3.0}",0.851161,False
+A4,Clipart,1,"{""alpha"": 2.0, ""beta"": 5.5}",0.849917,False
+A4,Clipart,1,"{""alpha"": 2.0, ""beta"": 8.0}",0.847808,False
+A4,Clipart,1,"{""alpha"": 5.0, ""beta"": 1.0}",0.853090,False
+A4,Clipart,1,"{""alpha"": 5.0, ""beta"": 3.0}",0.854528,True
+A4,Clipart,1,"{""alpha"": 5.0, ""beta"": 5.5}",0.853808,False
+A4,Clipart,1,"{""alpha"": 5.0, ""beta"": 8.0}",0.851410,False
+A4,Clipart,2,"{""alpha"": 0.5, ""beta"": 1.0}",0.846668,False
+A4,Clipart,2,"{""alpha"": 0.5, ""beta"": 3.0}",0.847903,False
+A4,Clipart,2,"{""alpha"": 0.5, ""beta"": 5.5}",0.847641,False
+A4,Clipart,2,"{""alpha"": 0.5, ""beta"": 8.0}",0.847184,False
+A4,Clipart,2,"{""alpha"": 1.0, ""beta"": 1.0}",0.848426,False
+A4,Clipart,2,"{""alpha"": 1.0, ""beta"": 3.0}",0.850442,False
+A4,Clipart,2,"{""alpha"": 1.0, ""beta"": 5.5}",0.849770,False
+A4,Clipart,2,"{""alpha"": 1.0, ""beta"": 8.0}",0.848673,False
+A4,Clipart,2,"{""alpha"": 2.0, ""beta"": 1.0}",0.851624,False
+A4,Clipart,2,"{""alpha"": 2.0, ""beta"": 3.0}",0.854664,False
+A4,Clipart,2,"{""alpha"": 2.0, ""beta"": 5.5}",0.853072,False
+A4,Clipart,2,"{""alpha"": 2.0, ""beta"": 8.0}",0.851395,False
+A4,Clipart,2,"{""alpha"": 5.0, ""beta"": 1.0}",0.857085,False
+A4,Clipart,2,"{""alpha"": 5.0, ""beta"": 3.0}",0.858853,False
+A4,Clipart,2,"{""alpha"": 5.0, ""beta"": 5.5}",0.859260,True
+A4,Clipart,2,"{""alpha"": 5.0, ""beta"": 8.0}",0.856659,False
+A4,Clipart,4,"{""alpha"": 0.5, ""beta"": 1.0}",0.848310,False
+A4,Clipart,4,"{""alpha"": 0.5, ""beta"": 3.0}",0.850300,False
+A4,Clipart,4,"{""alpha"": 0.5, ""beta"": 5.5}",0.849686,False
+A4,Clipart,4,"{""alpha"": 0.5, ""beta"": 8.0}",0.848585,False
+A4,Clipart,4,"{""alpha"": 1.0, ""beta"": 1.0}",0.852149,False
+A4,Clipart,4,"{""alpha"": 1.0, ""beta"": 3.0}",0.855738,False
+A4,Clipart,4,"{""alpha"": 1.0, ""beta"": 5.5}",0.855044,False
+A4,Clipart,4,"{""alpha"": 1.0, ""beta"": 8.0}",0.851779,False
+A4,Clipart,4,"{""alpha"": 2.0, ""beta"": 1.0}",0.857152,False
+A4,Clipart,4,"{""alpha"": 2.0, ""beta"": 3.0}",0.860306,False
+A4,Clipart,4,"{""alpha"": 2.0, ""beta"": 5.5}",0.859374,False
+A4,Clipart,4,"{""alpha"": 2.0, ""beta"": 8.0}",0.857129,False
+A4,Clipart,4,"{""alpha"": 5.0, ""beta"": 1.0}",0.863220,False
+A4,Clipart,4,"{""alpha"": 5.0, ""beta"": 3.0}",0.865441,False
+A4,Clipart,4,"{""alpha"": 5.0, ""beta"": 5.5}",0.866107,True
+A4,Clipart,4,"{""alpha"": 5.0, ""beta"": 8.0}",0.863484,False
+A4,Clipart,8,"{""alpha"": 0.5, ""beta"": 1.0}",0.851380,False
+A4,Clipart,8,"{""alpha"": 0.5, ""beta"": 3.0}",0.855079,False
+A4,Clipart,8,"{""alpha"": 0.5, ""beta"": 5.5}",0.853544,False
+A4,Clipart,8,"{""alpha"": 0.5, ""beta"": 8.0}",0.851376,False
+A4,Clipart,8,"{""alpha"": 1.0, ""beta"": 1.0}",0.856639,False
+A4,Clipart,8,"{""alpha"": 1.0, ""beta"": 3.0}",0.861995,False
+A4,Clipart,8,"{""alpha"": 1.0, ""beta"": 5.5}",0.860167,False
+A4,Clipart,8,"{""alpha"": 1.0, ""beta"": 8.0}",0.856931,False
+A4,Clipart,8,"{""alpha"": 2.0, ""beta"": 1.0}",0.863760,False
+A4,Clipart,8,"{""alpha"": 2.0, ""beta"": 3.0}",0.866406,False
+A4,Clipart,8,"{""alpha"": 2.0, ""beta"": 5.5}",0.866545,False
+A4,Clipart,8,"{""alpha"": 2.0, ""beta"": 8.0}",0.863751,False
+A4,Clipart,8,"{""alpha"": 5.0, ""beta"": 1.0}",0.866618,False
+A4,Clipart,8,"{""alpha"": 5.0, ""beta"": 3.0}",0.866124,False
+A4,Clipart,8,"{""alpha"": 5.0, ""beta"": 5.5}",0.869251,False
+A4,Clipart,8,"{""alpha"": 5.0, ""beta"": 8.0}",0.871821,True
+A4,Product,1,"{""alpha"": 0.5, ""beta"": 1.0}",0.773204,False
+A4,Product,1,"{""alpha"": 0.5, ""beta"": 3.0}",0.773523,False
+A4,Product,1,"{""alpha"": 0.5, ""beta"": 5.5}",0.773640,False
+A4,Product,1,"{""alpha"": 0.5, ""beta"": 8.0}",0.773845,False
+A4,Product,1,"{""alpha"": 1.0, ""beta"": 1.0}",0.773814,False
+A4,Product,1,"{""alpha"": 1.0, ""beta"": 3.0}",0.774974,False
+A4,Product,1,"{""alpha"": 1.0, ""beta"": 5.5}",0.774480,False
+A4,Product,1,"{""alpha"": 1.0, ""beta"": 8.0}",0.774656,False
+A4,Product,1,"{""alpha"": 2.0, ""beta"": 1.0}",0.776283,False
+A4,Product,1,"{""alpha"": 2.0, ""beta"": 3.0}",0.778284,False
+A4,Product,1,"{""alpha"": 2.0, ""beta"": 5.5}",0.777411,False
+A4,Product,1,"{""alpha"": 2.0, ""beta"": 8.0}",0.775523,False
+A4,Product,1,"{""alpha"": 5.0, ""beta"": 1.0}",0.779476,False
+A4,Product,1,"{""alpha"": 5.0, ""beta"": 3.0}",0.781099,True
+A4,Product,1,"{""alpha"": 5.0, ""beta"": 5.5}",0.780721,False
+A4,Product,1,"{""alpha"": 5.0, ""beta"": 8.0}",0.779293,False
+A4,Product,2,"{""alpha"": 0.5, ""beta"": 1.0}",0.774277,False
+A4,Product,2,"{""alpha"": 0.5, ""beta"": 3.0}",0.775351,False
+A4,Product,2,"{""alpha"": 0.5, ""beta"": 5.5}",0.775234,False
+A4,Product,2,"{""alpha"": 0.5, ""beta"": 8.0}",0.775002,False
+A4,Product,2,"{""alpha"": 1.0, ""beta"": 1.0}",0.775874,False
+A4,Product,2,"{""alpha"": 1.0, ""beta"": 3.0}",0.778338,False
+A4,Product,2,"{""alpha"": 1.0, ""beta"": 5.5}",0.777755,False
+A4,Product,2,"{""alpha"": 1.0, ""beta"": 8.0}",0.776682,False
+A4,Product,2,"{""alpha"": 2.0, ""beta"": 1.0}",0.779008,False
+A4,Product,2,"{""alpha"": 2.0, ""beta"": 3.0}",0.781906,False
+A4,Product,2,"{""alpha"": 2.0, ""beta"": 5.5}",0.781117,False
+A4,Product,2,"{""alpha"": 2.0, ""beta"": 8.0}",0.779924,False
+A4,Product,2,"{""alpha"": 5.0, ""beta"": 1.0}",0.784143,False
+A4,Product,2,"{""alpha"": 5.0, ""beta"": 3.0}",0.785448,False
+A4,Product,2,"{""alpha"": 5.0, ""beta"": 5.5}",0.786432,True
+A4,Product,2,"{""alpha"": 5.0, ""beta"": 8.0}",0.784973,False
+A4,Product,4,"{""alpha"": 0.5, ""beta"": 1.0}",0.775815,False
+A4,Product,4,"{""alpha"": 0.5, ""beta"": 3.0}",0.777991,False
+A4,Product,4,"{""alpha"": 0.5, ""beta"": 5.5}",0.777351,False
+A4,Product,4,"{""alpha"": 0.5, ""beta"": 8.0}",0.776276,False
+A4,Product,4,"{""alpha"": 1.0, ""beta"": 1.0}",0.779301,False
+A4,Product,4,"{""alpha"": 1.0, ""beta"": 3.0}",0.782923,False
+A4,Product,4,"{""alpha"": 1.0, ""beta"": 5.5}",0.783035,False
+A4,Product,4,"{""alpha"": 1.0, ""beta"": 8.0}",0.780361,False
+A4,Product,4,"{""alpha"": 2.0, ""beta"": 1.0}",0.784056,False
+A4,Product,4,"{""alpha"": 2.0, ""beta"": 3.0}",0.787302,False
+A4,Product,4,"{""alpha"": 2.0, ""beta"": 5.5}",0.786949,False
+A4,Product,4,"{""alpha"": 2.0, ""beta"": 8.0}",0.785350,False
+A4,Product,4,"{""alpha"": 5.0, ""beta"": 1.0}",0.789367,False
+A4,Product,4,"{""alpha"": 5.0, ""beta"": 3.0}",0.790094,False
+A4,Product,4,"{""alpha"": 5.0, ""beta"": 5.5}",0.791745,True
+A4,Product,4,"{""alpha"": 5.0, ""beta"": 8.0}",0.791240,False
+A4,Product,8,"{""alpha"": 0.5, ""beta"": 1.0}",0.779617,False
+A4,Product,8,"{""alpha"": 0.5, ""beta"": 3.0}",0.783672,False
+A4,Product,8,"{""alpha"": 0.5, ""beta"": 5.5}",0.782566,False
+A4,Product,8,"{""alpha"": 0.5, ""beta"": 8.0}",0.780447,False
+A4,Product,8,"{""alpha"": 1.0, ""beta"": 1.0}",0.785008,False
+A4,Product,8,"{""alpha"": 1.0, ""beta"": 3.0}",0.790749,False
+A4,Product,8,"{""alpha"": 1.0, ""beta"": 5.5}",0.789814,False
+A4,Product,8,"{""alpha"": 1.0, ""beta"": 8.0}",0.786967,False
+A4,Product,8,"{""alpha"": 2.0, ""beta"": 1.0}",0.792002,False
+A4,Product,8,"{""alpha"": 2.0, ""beta"": 3.0}",0.794835,False
+A4,Product,8,"{""alpha"": 2.0, ""beta"": 5.5}",0.796192,False
+A4,Product,8,"{""alpha"": 2.0, ""beta"": 8.0}",0.794534,False
+A4,Product,8,"{""alpha"": 5.0, ""beta"": 1.0}",0.792741,False
+A4,Product,8,"{""alpha"": 5.0, ""beta"": 3.0}",0.791897,False
+A4,Product,8,"{""alpha"": 5.0, ""beta"": 5.5}",0.796913,False
+A4,Product,8,"{""alpha"": 5.0, ""beta"": 8.0}",0.801584,True
+A4,Real World,1,"{""alpha"": 0.5, ""beta"": 1.0}",0.770521,False
+A4,Real World,1,"{""alpha"": 0.5, ""beta"": 3.0}",0.770983,False
+A4,Real World,1,"{""alpha"": 0.5, ""beta"": 5.5}",0.771128,False
+A4,Real World,1,"{""alpha"": 0.5, ""beta"": 8.0}",0.771420,False
+A4,Real World,1,"{""alpha"": 1.0, ""beta"": 1.0}",0.771242,False
+A4,Real World,1,"{""alpha"": 1.0, ""beta"": 3.0}",0.772682,False
+A4,Real World,1,"{""alpha"": 1.0, ""beta"": 5.5}",0.772392,False
+A4,Real World,1,"{""alpha"": 1.0, ""beta"": 8.0}",0.772569,False
+A4,Real World,1,"{""alpha"": 2.0, ""beta"": 1.0}",0.773871,False
+A4,Real World,1,"{""alpha"": 2.0, ""beta"": 3.0}",0.776603,False
+A4,Real World,1,"{""alpha"": 2.0, ""beta"": 5.5}",0.775995,False
+A4,Real World,1,"{""alpha"": 2.0, ""beta"": 8.0}",0.774089,False
+A4,Real World,1,"{""alpha"": 5.0, ""beta"": 1.0}",0.778328,False
+A4,Real World,1,"{""alpha"": 5.0, ""beta"": 3.0}",0.780170,True
+A4,Real World,1,"{""alpha"": 5.0, ""beta"": 5.5}",0.779942,False
+A4,Real World,1,"{""alpha"": 5.0, ""beta"": 8.0}",0.778094,False
+A4,Real World,2,"{""alpha"": 0.5, ""beta"": 1.0}",0.771590,False
+A4,Real World,2,"{""alpha"": 0.5, ""beta"": 3.0}",0.773143,False
+A4,Real World,2,"{""alpha"": 0.5, ""beta"": 5.5}",0.773055,False
+A4,Real World,2,"{""alpha"": 0.5, ""beta"": 8.0}",0.772656,False
+A4,Real World,2,"{""alpha"": 1.0, ""beta"": 1.0}",0.773550,False
+A4,Real World,2,"{""alpha"": 1.0, ""beta"": 3.0}",0.776288,False
+A4,Real World,2,"{""alpha"": 1.0, ""beta"": 5.5}",0.776136,False
+A4,Real World,2,"{""alpha"": 1.0, ""beta"": 8.0}",0.775127,False
+A4,Real World,2,"{""alpha"": 2.0, ""beta"": 1.0}",0.777094,False
+A4,Real World,2,"{""alpha"": 2.0, ""beta"": 3.0}",0.781231,False
+A4,Real World,2,"{""alpha"": 2.0, ""beta"": 5.5}",0.780362,False
+A4,Real World,2,"{""alpha"": 2.0, ""beta"": 8.0}",0.779061,False
+A4,Real World,2,"{""alpha"": 5.0, ""beta"": 1.0}",0.784490,False
+A4,Real World,2,"{""alpha"": 5.0, ""beta"": 3.0}",0.787443,False
+A4,Real World,2,"{""alpha"": 5.0, ""beta"": 5.5}",0.788080,True
+A4,Real World,2,"{""alpha"": 5.0, ""beta"": 8.0}",0.785943,False
+A4,Real World,4,"{""alpha"": 0.5, ""beta"": 1.0}",0.773376,False
+A4,Real World,4,"{""alpha"": 0.5, ""beta"": 3.0}",0.775799,False
+A4,Real World,4,"{""alpha"": 0.5, ""beta"": 5.5}",0.775591,False
+A4,Real World,4,"{""alpha"": 0.5, ""beta"": 8.0}",0.774750,False
+A4,Real World,4,"{""alpha"": 1.0, ""beta"": 1.0}",0.777271,False
+A4,Real World,4,"{""alpha"": 1.0, ""beta"": 3.0}",0.781755,False
+A4,Real World,4,"{""alpha"": 1.0, ""beta"": 5.5}",0.781813,False
+A4,Real World,4,"{""alpha"": 1.0, ""beta"": 8.0}",0.779127,False
+A4,Real World,4,"{""alpha"": 2.0, ""beta"": 1.0}",0.783024,False
+A4,Real World,4,"{""alpha"": 2.0, ""beta"": 3.0}",0.787911,False
+A4,Real World,4,"{""alpha"": 2.0, ""beta"": 5.5}",0.787615,False
+A4,Real World,4,"{""alpha"": 2.0, ""beta"": 8.0}",0.785457,False
+A4,Real World,4,"{""alpha"": 5.0, ""beta"": 1.0}",0.790274,False
+A4,Real World,4,"{""alpha"": 5.0, ""beta"": 3.0}",0.793451,False
+A4,Real World,4,"{""alpha"": 5.0, ""beta"": 5.5}",0.795070,True
+A4,Real World,4,"{""alpha"": 5.0, ""beta"": 8.0}",0.793284,False
+A4,Real World,8,"{""alpha"": 0.5, ""beta"": 1.0}",0.776821,False
+A4,Real World,8,"{""alpha"": 0.5, ""beta"": 3.0}",0.781963,False
+A4,Real World,8,"{""alpha"": 0.5, ""beta"": 5.5}",0.781122,False
+A4,Real World,8,"{""alpha"": 0.5, ""beta"": 8.0}",0.779215,False
+A4,Real World,8,"{""alpha"": 1.0, ""beta"": 1.0}",0.783349,False
+A4,Real World,8,"{""alpha"": 1.0, ""beta"": 3.0}",0.789742,False
+A4,Real World,8,"{""alpha"": 1.0, ""beta"": 5.5}",0.789071,False
+A4,Real World,8,"{""alpha"": 1.0, ""beta"": 8.0}",0.786357,False
+A4,Real World,8,"{""alpha"": 2.0, ""beta"": 1.0}",0.791304,False
+A4,Real World,8,"{""alpha"": 2.0, ""beta"": 3.0}",0.795914,False
+A4,Real World,8,"{""alpha"": 2.0, ""beta"": 5.5}",0.797469,False
+A4,Real World,8,"{""alpha"": 2.0, ""beta"": 8.0}",0.795341,False
+A4,Real World,8,"{""alpha"": 5.0, ""beta"": 1.0}",0.795664,False
+A4,Real World,8,"{""alpha"": 5.0, ""beta"": 3.0}",0.797687,False
+A4,Real World,8,"{""alpha"": 5.0, ""beta"": 5.5}",0.802518,False
+A4,Real World,8,"{""alpha"": 5.0, ""beta"": 8.0}",0.805751,True
