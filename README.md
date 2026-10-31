@@ -1,5 +1,7 @@
 # SC4001 Project（方向 I）：少样本 CLIP 适配何时有害？
 
+**报告协作入口：** [Overleaf 项目](https://www.overleaf.com/project/6ae58ae8c68c07d74ba7aefd) · [报告搭建与协作说明](report/SETUP.md)。已建立课程格式的 LaTeX 骨架并通过 XeLaTeX 编译；正文待写。GitHub / Overleaf 通过 Integrations → GitHub 手动同步。
+
 更新：2026-10-31（按课程大作业的体量收缩了范围，见 3.5、3.6 与第 7 节）。已选定 handout 方向 I（Adapting Foundation Models to Unseen Domains）。本文是研究方案与执行计划，文中的"预期"都是待验证的假设，不是结果。
 
 **进度（2026-10-31）：** 已在 TC1 上建好环境（4.2）、下载数据、生成固定划分、提取 ViT-B/32 特征，并跑通 B0/B1（见 4.5）；超参网格已固定在 `configs/adapt.yaml`，A1、A2、A4 的主矩阵已跑完（见 4.6）；help/harm、置信度分箱、门控与对照已完成，H1、H2 已判定，第 7 节图 1–5 与主结果表已生成（见 4.7）。3.6 可选项中的 VRF 式加权已完成，H3 不成立（见 4.8）。**实验已全部完成，写报告的组员直接看第 7 节：那里是整理好的故事线、要用的图表与数字，以及不要写错的地方。** 方括号编号 [n] 对应第 8 节的参考文献。
@@ -587,6 +589,8 @@ Intro、Results、Discussion、Conclusion 都围绕这句话写。
 **相近工作的检索范围：** 逐样本或基于熵的融合、zero-shot 回退的置信度门控、CLIP 的 negative flip、无退化的模型更新。没有找到在少样本 CLIP adapter 上做 MSP 门控或翻转分析的论文，但可能有遗漏；写报告前再检索一次。
 
 ## 9. AI 使用记录（供最终 AI Use Statement 使用）
+
+- **2026-10-31（报告搭建）：** 使用 Codex 读取课程 handout、README、部分训练/选参代码和结果 CSV，建立 A4 单栏 Arial 10pt 的 LaTeX 报告骨架，按现有结果生成含 B1 的 K=4 表格，并配置 GitHub / Overleaf 同步。核实方式：检查输入文件路径及表格列数、B0 数字与逐图预测的一致性；Overleaf XeLaTeX 编译 0 errors / 0 warnings；下载 PDF 后核对 A4 与嵌入的 Arial 字体，并检查正文和表格渲染。本次没有重跑训练实验，也没有独立验证全部文献。最终声明中的实际模型名与团队分工仍需组员确认。
 
 - **2026-10-13：** 使用 Codex 阅读 handout 与集群指南，生成 A–J 十个方向的选题草案（见 git 提交 `f92c718` 中的 README）。
 - **2026-10-29/30：** 使用 Claude Code（Claude Opus 5.5）对比方向 C 与 I，细化方向 I 的研究问题，并重写本 README。第 8 节的数据、代码与文献信息由其检索后，对照 arXiv、官方页面与 Hugging Face 页面逐条核对。

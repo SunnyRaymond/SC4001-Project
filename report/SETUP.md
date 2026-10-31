@@ -1,6 +1,8 @@
 # SC4001 报告工作区
 
-这是报告骨架，尚未完成正文或通过 LaTeX 编译。课程要求以仓库根目录的 project_handout.pdf 为准：A4、单栏、Arial 10pt，正文最多 10 页。封面、目录、参考文献和附录不计。不能套用群聊中的 AAAI 双栏模板。
+这是报告骨架，正文尚未完成；已于 2026-10-31 在 Overleaf 通过 XeLaTeX 编译（0 errors / 0 warnings）。下载 PDF 后核对为 A4，正文嵌入 ArialMT / Arial-BoldMT，并检查了两页正文及结果表的渲染。当前共 6 页，其中正文 2 页；这是骨架页数，不代表最终报告页数。课程要求以仓库根目录的 project_handout.pdf 为准：A4、单栏、Arial 10pt，正文最多 10 页。封面、目录、参考文献和附录不计。不能套用群聊中的 AAAI 双栏模板。
+
+**Overleaf 项目：** https://www.overleaf.com/project/6ae58ae8c68c07d74ba7aefd
 
 ## Overleaf 设置
 
@@ -40,4 +42,4 @@
 - GitHub 连接与手动同步：https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization
 - 字体清单：https://www.overleaf.com/learn/latex/Questions/Which_OTF_or_TTF_fonts_are_supported_via_fontspec%3F
 
-本地准备日期：2026-10-31。此骨架尚未推送至 GitHub，也未导入 Overleaf。
+搭建日期：2026-10-31。骨架提交 `28356e0` 已推送到 GitHub `main`，并从该仓库导入上述 Overleaf 项目；主文件 `main.tex`，编译器 XeLaTeX，TeX Live 2026。账号连接与项目绑定已经完成，后续仍需手动 Pull / Push 同步。
