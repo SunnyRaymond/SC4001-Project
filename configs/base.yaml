@@ -1,0 +1,41 @@
+# Settings fixed before any test result is seen (README 3.1).
+# Do not edit after results exist; add a new file instead and say why in git.
+
+dataset:
+  hf_repo: flwrlabs/office-home
+  revision: d430d44779e929b335be368ab3456484e5de36bb  # pinned 2026-10-31
+  local_dir: data/office_home
+  num_classes: 65
+  # Domain strings exactly as stored in the parquet `domain` column -> short slug for file names.
+  domains:
+    Art: art
+    Clipart: clipart
+    Product: product
+    Real World: real_world
+
+backbones:
+  ViT-B-32-quickgelu:
+    pretrained: openai
+    hf_repo: timm/vit_base_patch32_clip_224.openai
+    revision: a6f597a30f7b82c51704746581f9a4e41421e878
+  ViT-B-16-quickgelu:  # optional backbone check (README 3.6)
+    pretrained: openai
+    hf_repo: timm/vit_base_patch16_clip_224.openai
+    revision: 977e3dd0ec55ab8da155f2fbeb6b5f54948b6e3d
+
+# Class names: label names from the parquet, "_" and "-" -> " ", lower-cased. No other edits.
+
+prompts:
+  b0: "a photo of a {}."
+  # B1: one fixed domain prompt per target domain, written before seeing any result.
+  b1:
+    Art: "an art image of a {}."
+    Clipart: "a clipart image of a {}."
+    Product: "a product image of a {}."
+    Real World: "a real world image of a {}."
+
+splits:
+  seeds: [0, 1, 2, 3, 4]
+  shots: [1, 2, 4, 8]
+  k_max: 8              # per-class support pool; K-shot = first K of the pool
+  source_seeds: [0, 1, 2]  # seeds used when simulating the task on source domains

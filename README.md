@@ -1,6 +1,8 @@
 # SC4001 Project（方向 I）：少样本 CLIP 适配何时有害？
 
-更新：2026-10-31（按课程大作业的体量收缩了范围，见 3.5、3.6 与第 7 节）。已选定 handout 方向 I（Adapting Foundation Models to Unseen Domains）。本文是研究方案与执行计划：**尚未下载数据、运行模型或提交集群作业**，文中的"预期"都是待验证的假设，不是结果。方括号编号 [n] 对应第 8 节的参考文献。
+更新：2026-10-31（按课程大作业的体量收缩了范围，见 3.5、3.6 与第 7 节）。已选定 handout 方向 I（Adapting Foundation Models to Unseen Domains）。本文是研究方案与执行计划，文中的"预期"都是待验证的假设，不是结果。
+
+**进度（2026-10-31）：** 已在 TC1 上建好环境（4.2）、下载数据、生成固定划分、提取 ViT-B/32 特征，并跑通 B0/B1（见 4.5）。适配方法、门控与分析尚未实现。方括号编号 [n] 对应第 8 节的参考文献。
 
 ## 0. 一页摘要
 
@@ -175,86 +177,90 @@
 
 ### 4.2 首次设置（头节点）
 
-```bash
-MyTCinfo
-```
+`MyTCinfo` 查询结果（2026-10-31）：QoS `normal`，每用户 1 GPU、20 核、64G 内存，单作业最长 6 小时，最多同时提交 2 个作业；分区 `UGGPU-TC1`，计算节点 GPU 为 Tesla V100-PCIE-32GB。
 
-先确认本学期的 QoS。指南中的示例为：1 GPU、20 核、64G 内存、单作业最长 6 小时、最多 2 个作业；QoS 每学期可能调整，以实际查询为准。
+**不用课程 conda 环境：**
 
-```bash
-module load anaconda
-cp /tc1apps/3_conda_yml/SC4001.yml ~
-conda env create -f ~/SC4001.yml -n mySC4001
-```
+- 指南里的 `SC4001.yml` 不存在，`/tc1apps/3_conda_yml/` 下只有 `CZ4042_v4/v5/v6.yml`。
+- v5（Python 3.11、PyTorch 2.5.1、CUDA 11.8）固定了 `mkl=2025.0.0`，`import torch` 报 `libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent`，这是 conda 版 PyTorch 与 MKL ≥ 2024.1 的已知冲突；v4 固定了同一 MKL 版本。v6 是 PyTorch 2.7 + CUDA 12.8，未确认是否支持 V100。
+- 因此用集群的 Python 3.11 模块建 venv，从 PyTorch 官方源装 `torch==2.5.1+cu118` 的 pip wheel。它自带 CUDA 库，仍支持 V100（sm_70）。
 
-课程提供的环境为 Python 3.12、PyTorch 2.5.1、CUDA 11.8，支持 V100，可以避开新版 PyTorch 不再支持 Volta 的问题。
+在项目根目录（集群上为 `~/SC4001-Project`）运行一次：
 
 ```bash
-conda activate mySC4001
-pip install open_clip_torch==3.3.0 "torch==2.5.1" pyarrow pandas scikit-learn scipy matplotlib
+bash jobs/setup_env.sh
 ```
 
-- 固定 `torch==2.5.1`，防止 pip 顺带升级 torch；安装后用 `conda list | grep torch` 再确认一次版本。
+- 环境装在 `~/envs/sc4001`，作业里用 `source ~/envs/sc4001/bin/activate` 激活，不需要 `module load`。
+- 安装其余包时用约束文件固定 torch，防止 pip 顺带升级；实际版本记录在 `requirements-lock.txt`。
 - open_clip 3.3.0 要求 torch ≥ 2.0。不要从 GitHub main 分支安装：其 README 写的是 torch ≥ 2.6。
 
 ### 4.3 数据与模型权重
 
-先提交一个不申请 GPU 的小作业，在计算节点上运行 `curl -sI https://huggingface.co`，确认计算节点能否联网：
-
-- **能联网：** 在作业里下载数据与 CLIP 权重。
-- **不能联网：** 在本机下载后用 WinSCP/scp 上传到 home 目录，作业里设置 `HF_HUB_OFFLINE=1`。
-
-在作业中或本机下载数据：
+计算节点可以联网：2026-10-31 的探测作业能访问 huggingface.co 与 pypi.org。下载作业按 `configs/base.yaml` 中固定的 revision 下载数据与权重，然后生成划分：
 
 ```bash
-python -c "from huggingface_hub import snapshot_download; snapshot_download('flwrlabs/office-home', repo_type='dataset', local_dir='data/office_home')"
+mkdir -p logs && sbatch jobs/download.sbatch
 ```
 
-权重同理用 `snapshot_download('timm/vit_base_patch32_clip_224.openai')` 和 `snapshot_download('timm/vit_base_patch16_clip_224.openai')` 下载到 HF 缓存；如果是在本机下载，就把缓存目录整体上传到集群的 `~/.cache/huggingface/hub/`。
+- 数据放在 `data/office_home`（约 1.16 GB）；权重只取 `open_clip_model.safetensors`，放在 `~/.cache/huggingface/hub`。
+- 没有网络的机器：在别处运行 `python scripts/download.py`，再把这两个位置拷过去。特征提取作业设置了 `HF_HUB_OFFLINE=1`，只读缓存。
+- 数据与特征放在 home 目录下，每完成一个阶段就把结果拉回本机。集群**没有备份**。
 
-数据与特征放在 home 目录下（磁盘额度至少 100GB），每完成一个阶段就把结果拉回本机。集群**没有备份**。
+### 4.4 作业
 
-### 4.4 作业脚本模板（特征提取）
+从项目根目录提交（SLURM 不会自动创建 `logs/`）：
 
 ```bash
-#!/bin/bash
-#SBATCH --partition=UGGPU-TC1
-#SBATCH --qos=normal
-#SBATCH --nodes=1
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=16G
-#SBATCH --time=01:00:00
-#SBATCH --job-name=oh_feats
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
-
-module load anaconda
-source activate mySC4001
-
-# 每 60 秒记录一次分配到的 GPU 的利用率和显存
-nvidia-smi --query-gpu=timestamp,utilization.gpu,memory.used --format=csv -l 60 > logs/gpu_${SLURM_JOB_ID}.csv &
-
-python scripts/extract_features.py --backbone ViT-B-32-quickgelu --data data/office_home --out features/
+sbatch jobs/extract_features.sbatch ViT-B-32-quickgelu
+sbatch jobs/zero_shot.sbatch ViT-B-32-quickgelu
 ```
 
-- 提交前先 `mkdir -p logs`，因为 SLURM 不会自动创建日志目录。
-- `scripts/extract_features.py` 尚未编写，见第 5 节的计划结构。
-- 作业结束后用 `seff <jobid>` 查看实际的 CPU 和内存利用率，据此调整下一次的申请量。
+- 后一个作业可以加 `--dependency=afterok:<前一个 jobid>` 排在前一个之后；QoS 最多同时提交 2 个作业。
+- 特征提取作业每 60 秒把 GPU 利用率和显存写入 `logs/gpu_<jobid>.csv`。作业结束后用 `seff <jobid>` 查看实际的 CPU 和内存利用率，据此调整申请量。
+- zero-shot 作业不申请 GPU，几秒内完成。
 - 只使用分配给自己的 QoS，申请量不超过 QoS 上限；不要访问自己 home 目录和共享目录以外的路径。
+- 同步代码：在本机项目根目录运行 `tar cf - configs scripts jobs requirements.txt | ssh CCDS-TC1 "cd ~/SC4001-Project && tar xf -"`。
 
-## 5. 计划中的代码结构
+### 4.5 首次运行记录（2026-10-31，ViT-B/32）
+
+| 作业 | 用时 | 说明 |
+| --- | --- | --- |
+| 下载 + 划分（CPU） | 29 s | 四个域图片数与 3.1 一致，共 15,588 张；每类最少的是 Art/drill，15 张，抽走 8 张后剩 7 张测试图 |
+| 特征提取（1×V100） | 75 s | 图像部分 50 s；logit scale = 100；无 QuickGELU 警告 |
+| B0/B1（CPU） | 1 s | 结果写入 `results/ViT-B-32-quickgelu/` |
+
+测试集 top-1 准确率（%），5 个 seeds 的均值 ± 标准差：
+
+| 方法 | Art | Clipart | Product | Real World | 平均 |
+| --- | --- | --- | --- | --- | --- |
+| B0 | 79.23 ± 0.43 | 64.96 ± 0.32 | 86.74 ± 0.14 | 87.60 ± 0.07 | 79.63 |
+| B1 | 79.84 ± 0.43 | 67.26 ± 0.26 | 88.07 ± 0.13 | 88.00 ± 0.12 | 80.79 |
+
+- B1 在四个域上都高于 B0，Clipart 上高 2.3 个点。按 3.3，主分析仍以 B0 为参照，另以 B1 复核一次。
+- 原计划预留 2–4 GPU 小时；实际一次提取不到 2 分钟，ViT-B/16 复核的成本可以忽略。
+
+## 5. 代码结构
 
 ```
-configs/                 # K、seeds、超参网格、prompt 模板、类名映射（看到结果前固定）
+configs/base.yaml        # 数据/权重 revision、域、prompt 模板、K、seeds（看到结果前固定）
+requirements.txt         # 依赖；requirements-lock.txt 为 TC1 上的实际版本
 scripts/
-  extract_features.py    # 一次性：图像/文本特征 → features/
-  make_splits.py         # 生成并保存所有支持池与测试划分（按 seed）
-  run_experiments.py     # 读缓存特征，跑全部方法、门控与来源域选参，逐图预测写入 results/
-  analyze.py             # help/harm、置信度分箱、门控曲线、配对差值、出图
-jobs/                    # sbatch 脚本
+  common.py              # 配置、全局图像索引、类名规范化、读缓存特征与划分
+  download.py            # 下载固定 revision 的数据与权重
+  make_splits.py         # 生成所有（域, seed）的支持池与测试集 → splits/
+  extract_features.py    # 一次性：图像/文本特征 → features/<backbone>/
+  zero_shot.py           # B0、B1 → results/<backbone>/
+  run_experiments.py     # 待写：适配方法、门控与来源域选参，逐图预测写入 results/
+  analyze.py             # 待写：help/harm、置信度分箱、门控曲线、配对差值、出图
+jobs/                    # setup_env.sh 与 sbatch 脚本
+splits/                  # 固定划分与每类数量（提交到 git，全组共用）
 results/                 # 逐图预测与汇总表（只存小文件）
 ```
+
+- **全局图像索引：** 按文件名排序后 parquet 分片的行序。特征、划分、逐图结果都用这个索引指代图像。
+- `data/`、`features/`、`logs/` 不进 git。特征可在一个 GPU 作业内重新生成。
+- 超参网格尚未写入 `configs/`，须在实现适配方法时、看到任何适配结果之前补上并提交。
 
 要保存**逐图预测**而不只是准确率：help/harm、置信度分箱、门控曲线都依赖逐图结果，门控与对照也是在保存的逐图概率上做后处理。
 
@@ -365,5 +371,6 @@ results/                 # 逐图预测与汇总表（只存小文件）
 - **2026-10-13：** 使用 Codex 阅读 handout 与集群指南，生成 A–J 十个方向的选题草案（见 git 提交 `f92c718` 中的 README）。
 - **2026-10-29/30：** 使用 Claude Code（Claude Opus 5.5）对比方向 C 与 I，细化方向 I 的研究问题，并重写本 README。第 8 节的数据、代码与文献信息由其检索后，对照 arXiv、官方页面与 Hugging Face 页面逐条核对。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）评审设计。它指出：范围超出 10 页正文能容纳的量；原 H2 的一部分由定义决定；概率空间的全局混合本身已有逐样本效应；原 H1 的否定条件过松。据此收缩了范围、改写了假设，并修改本 README。
+- **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）在 TC1 上搭建环境，编写 `configs/`、`scripts/`、`jobs/`，下载数据并跑通 B0/B1。核实方式：类名与各域图片数对照 Hugging Face 数据卡与 3.1；检查 CLIP 预处理与 logit scale；确认各 seed 的支持池与测试集不重叠。
 - **团队决策：** 2026-10-29 选定方向 I；2026-10-31 决定按课程大作业的体量收缩范围。研究问题、假设与实验设计将在组内讨论后确认。
 - **待补充：** 后续编码、调试、写作中的 AI 使用情况与核实方式。

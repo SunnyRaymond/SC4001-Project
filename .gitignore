@@ -37,3 +37,8 @@ htmlcov/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Large or cluster-local outputs (results/ and splits/ are small and committed)
+data/
+features/
+logs/
