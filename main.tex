@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,graphicx,booktabs,refcount}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[section]{placeins}
+\usepackage{flafter}
 \usepackage[hidelinks]{hyperref}
 \setcounter{topnumber}{3}
 \renewcommand{\topfraction}{0.9}
@@ -49,6 +50,7 @@ Submission deadline: 16 November 2026, 23:59 (Singapore time)\par
 \label{body-end}
 \typeout{SC4001-BODY-PAGES: \getpagerefnumber{body-end}}
 \clearpage
+\phantomsection
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{plainnat}
 \bibliography{report/references}

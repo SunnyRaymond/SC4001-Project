@@ -1,11 +1,11 @@
 \section{Experiments and Results}
 \label{sec:results}
-Unless stated otherwise, accuracy, help and harm are percentages, with harm measured over \emph{all} test images relative to B0. Results average five seeds within each domain and weight the four domains equally. Differences in accuracy are in percentage points (pp). The confidence-bin plot instead pools image counts after forming deciles within each domain and seed. Paired comparisons use the same domain, $K$ and seed, giving 80 comparisons per adapter; their standard deviations describe variation across these conditions, not independent-sample confidence intervals.
+Unless stated otherwise, accuracy, help and harm are percentages, with harm measured over \emph{all} test images relative to B0. Results average five seeds within each domain and weight the four domains equally. Differences in accuracy are in percentage points (pp). The confidence-bin plot instead pools image counts after forming deciles within each domain and seed. Paired comparisons use the same domain, $K$ and seed, giving 80 comparisons per adapter; their standard deviations describe variation across these conditions, not independent-sample confidence intervals. Ungated main-table rows use the original class predictions; post-processing comparisons use saved FP16 probabilities, whose ties can slightly change the predicted class.
 
 \subsection{Accuracy gains and negative flips}
 Figure~\ref{fig:accuracy} shows that A2 and A4 outperform B0 on average at every tested $K$, whereas A1 remains below it. A1 rises from 50.87\% at one shot to 79.25\% at eight shots, still below B0's 79.63\%. A2 rises from 80.55\% to 84.33\%, and A4 from 80.40\% to 82.52\%. This pattern supports preserving zero-shot information during adaptation in this experiment. However, at one shot both adapters trail the label-free domain-prompt baseline B1 (80.79\%); a small labelled set is not automatically more useful than changing the prompt.
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{report/figures/accuracy.pdf}
 \caption{Accuracy versus support size. A1: ordinary linear probe; A2: zero-shot-initialized probe; A4: Tip-Adapter. B0 and B1 are zero-shot references. Error bars show one sample standard deviation over five seeds.}
@@ -16,7 +16,7 @@ Table~\ref{tab:k4-main} reports both accuracy and harm at $K=4$. A2 gains 3.35 p
 
 \input{report/tables/k4-main}
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{report/figures/flips.pdf}
 \caption{Help (above zero), harm (below zero) and net accuracy change relative to B0. Rates average domains and seeds equally. Increasing support size mainly expands A2's help, while negative flips persist.}
@@ -28,7 +28,7 @@ At $K=4$, 90.3\% of A2's negative flips occur in the lower five zero-shot-confid
 
 The high-confidence hypothesis H1 specified non-positive net gain in the top 20\%, with rejection when a majority of seeds had positive gain. None of the 48 adapter--domain--$K$ conditions meets that rejection rule. This is consistent with H1 under its stated criterion, rather than proof of a strictly non-positive effect everywhere: small positive mean gains occur in some A2/A4 conditions, with at most one positive seed each. For A2 and A4, changes in these high-confidence bins are generally small. The useful diagnostic is the overlap of help and harm in lower-confidence bins, not merely the association of confidence with zero-shot correctness.
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{report/figures/confidence.pdf}
 \caption{$K=4$ outcomes by B0 confidence decile. Left: help minus harm within each decile. Right: conditional harm, dividing negative flips by B0-correct images in that decile. Deciles are formed separately per domain and seed, then counts are pooled. Shading marks the top 20\%.}
@@ -42,7 +42,7 @@ Fixed probability mixing C1 is stronger than G1 for A1 and A2: it wins 80/80 and
 
 \input{report/tables/gating-paired}
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{report/figures/gates.pdf}
 \caption{Gate curves at $K=4$, averaged over domains and seeds. Curves sweep retained-image fractions for diagnosis using test outcomes; they are not used to select a threshold. The dot reports the source-selected G1 operating point, and the horizontal line reports source-selected C1. Random retention is shown in expectation.}
