@@ -17,7 +17,7 @@ RES = ROOT / "results" / "ViT-B-32-quickgelu"
 OUT = ROOT / "report" / "figures"
 COLORS = {"A1": "#27649e", "A2": "#be541e", "A4": "#16735a"}
 WIDTH = 6.30  # 160 mm text width; labels retain their intended printed point size.
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8,
+plt.rcParams.update({"font.family": "Arial", "font.size": 8,
                      "axes.labelsize": 8, "axes.titlesize": 9,
                      "legend.fontsize": 7.5, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
                      "axes.spines.top": False, "axes.spines.right": False,
