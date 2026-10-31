@@ -1,0 +1,30 @@
+# VRF-style sample-wise weighting in the few-shot setting (README 3.6, ref [11]).
+# Fixed and committed before any VRF result was seen, on top of base.yaml and adapt.yaml.
+# Do not edit after results exist; add a new file instead and say why in git.
+#
+# VRF (Zhu, Cui & Zhang, NeurIPS 2024, arXiv:2411.06966, Sec. 3.2):
+#   failure set V = {v_i : fine-tuned model right and zero-shot wrong on training sample i}   (Eq. 3)
+#   d(x) = || v - v_(k) ||_2, v_(k) the k-th nearest neighbour of v in V, k = floor(p |V|)    (Eq. 4)
+#   w(x) = sigmoid(-(d(x) - a) / b)                                                          (Eq. 6)
+#   p(y|x) = w(x) p_ft(y|x) + (1 - w(x)) p_zs(y|x)                                            (Eq. 5)
+#
+# Few-shot version (what differs from the paper):
+# - The training set is the K-shot support set; the "fine-tuned model" is the adapter
+#   (A1, A2 or A4) fitted on it, refitted with the config selected in adapt_selection.csv.
+# - The encoder is frozen, so v is the cached CLIP image feature (L2-normalised, d in [0, 2]).
+# - k = max(1, floor(p |V|)) with the paper's p = 0.1%; |V| <= 65 * 8 here, so k = 1.
+# - Empty V (zero-shot right on the whole support): w(x) = 0, i.e. B0.
+# - a, b are selected leave-target-out on the source domains, like every other hyperparameter;
+#   the paper sweeps them on an in-distribution validation set.
+p_percent: 0.1
+grid:
+  a: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.2]
+  b: [0.02, 0.05, 0.1, 0.2, 0.5]
+
+# Control V0: same a, b as the selected VRF, but V replaced by a random subset of the
+# support set of the same size (mean of C2_repeats draws). Isolates the failure signal.
+
+# Pre-registered hypothesis H3 (written before any VRF result):
+#   For A2 (the adapter with the most help and harm), VRF beats the global mix C1 on most of
+#   the 80 paired (domain, K, seed) comparisons, and beats the random-set control V0.
+#   Rejected if VRF does not beat C1 on most pairs. A1 and A4 are reported without a hypothesis.
