@@ -305,7 +305,7 @@ sbatch jobs/zero_shot.sbatch ViT-B-32-quickgelu
 
 ```
 configs/base.yaml        # 数据/权重 revision、域、prompt 模板、K、seeds（看到结果前固定）
-configs/adapt.yaml       # 适配方法、门控的超参网格（看到适配结果前固定，提交 2ccc21d）
+configs/adapt.yaml       # 适配方法、门控的超参网格（看到适配结果前固定，提交 c8f869e）
 requirements.txt         # 依赖；requirements-lock.txt 为 TC1 上的实际版本
 scripts/
   common.py              # 配置、全局图像索引、类名规范化、读缓存特征与划分
@@ -438,7 +438,7 @@ figures/                 # 报告用图（PNG）
 - **2026-10-29/30：** 使用 Claude Code（Claude Opus 5.5）对比方向 C 与 I，细化方向 I 的研究问题，并重写本 README。第 8 节的数据、代码与文献信息由其检索后，对照 arXiv、官方页面与 Hugging Face 页面逐条核对。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）评审设计。它指出：范围超出 10 页正文能容纳的量；原 H2 的一部分由定义决定；概率空间的全局混合本身已有逐样本效应；原 H1 的否定条件过松。据此收缩了范围、改写了假设，并修改本 README。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）在 TC1 上搭建环境，编写 `configs/`、`scripts/`、`jobs/`，下载数据并跑通 B0/B1。核实方式：类名与各域图片数对照 Hugging Face 数据卡与 3.1；检查 CLIP 预处理与 logit scale；确认各 seed 的支持池与测试集不重叠。
-- **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `configs/adapt.yaml` 与 `scripts/run_experiments.py`，跑完 A1、A2、A4 主矩阵。网格先于任何适配结果提交（2ccc21d）。核实方式：断言支持集标签与类别一致；检查 λ 最小时 lbfgs 收敛；逐格检查选中值是否落在网格边缘。
+- **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `configs/adapt.yaml` 与 `scripts/run_experiments.py`，跑完 A1、A2、A4 主矩阵。网格先于任何适配结果提交（c8f869e）。核实方式：断言支持集标签与类别一致；检查 λ 最小时 lbfgs 收敛；逐格检查选中值是否落在网格边缘。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `analyze.py`、`gating.py`、`plot.py`，完成 help/harm、置信度分箱、门控与对照并出图。核实方式：G1 在保留率 0 与 100% 时分别等于未门控与 B0（图 4 两端）；逐图检查图例与标注不遮挡数据。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `plot_examples.py` 与 `jobs/plot_examples.sbatch`，在 TC1 上生成图 5 与按类 harm 统计。核实方式：逐张查看图 5，确认标注的真类与 B0 判对、A2 判错一致。
 - **团队决策：** 2026-10-29 选定方向 I；2026-10-31 决定按课程大作业的体量收缩范围。研究问题、假设与实验设计将在组内讨论后确认。
