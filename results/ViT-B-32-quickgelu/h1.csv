@@ -1,0 +1,49 @@
+method,domain,K,top20_net_mean,top20_net_std,seeds_net_pos,seeds,h1_rejected
+A1,Art,1,-0.310761,0.078227,0,5,False
+A1,Art,2,-0.150131,0.037781,0,5,False
+A1,Art,4,-0.062992,0.011289,0,5,False
+A1,Art,8,-0.030971,0.011197,0,5,False
+A1,Clipart,1,-0.334460,0.060278,0,5,False
+A1,Clipart,2,-0.194538,0.043864,0,5,False
+A1,Clipart,4,-0.069701,0.022346,0,5,False
+A1,Clipart,8,-0.023927,0.015942,0,5,False
+A1,Product,1,-0.130013,0.052397,0,5,False
+A1,Product,2,-0.050064,0.039213,0,5,False
+A1,Product,4,-0.009195,0.004727,0,5,False
+A1,Product,8,-0.000511,0.000700,0,5,False
+A1,Real World,1,-0.180704,0.016533,0,5,False
+A1,Real World,2,-0.079791,0.023656,0,5,False
+A1,Real World,4,-0.027640,0.012140,0,5,False
+A1,Real World,8,-0.006258,0.004363,0,5,False
+A2,Art,1,0.000000,0.000000,0,5,False
+A2,Art,2,0.000000,0.000000,0,5,False
+A2,Art,4,0.000000,0.000000,0,5,False
+A2,Art,8,0.000000,0.000000,0,5,False
+A2,Clipart,1,0.000260,0.000582,1,5,False
+A2,Clipart,2,-0.001821,0.003391,0,5,False
+A2,Clipart,4,-0.001821,0.002176,0,5,False
+A2,Clipart,8,-0.003641,0.003836,0,5,False
+A2,Product,1,0.000000,0.000000,0,5,False
+A2,Product,2,0.000000,0.000000,0,5,False
+A2,Product,4,0.000000,0.000000,0,5,False
+A2,Product,8,0.000000,0.000000,0,5,False
+A2,Real World,1,-0.000782,0.001749,0,5,False
+A2,Real World,2,-0.001043,0.002332,0,5,False
+A2,Real World,4,-0.000782,0.001749,0,5,False
+A2,Real World,8,-0.000522,0.001166,0,5,False
+A4,Art,1,0.000000,0.000000,0,5,False
+A4,Art,2,0.000000,0.000000,0,5,False
+A4,Art,4,0.000000,0.000000,0,5,False
+A4,Art,8,0.000000,0.000000,0,5,False
+A4,Clipart,1,0.000000,0.000000,0,5,False
+A4,Clipart,2,0.000000,0.000000,0,5,False
+A4,Clipart,4,0.000260,0.000582,1,5,False
+A4,Clipart,8,-0.001040,0.001696,0,5,False
+A4,Product,1,0.000000,0.000000,0,5,False
+A4,Product,2,0.000000,0.000000,0,5,False
+A4,Product,4,0.000000,0.000000,0,5,False
+A4,Product,8,0.000000,0.000000,0,5,False
+A4,Real World,1,0.000000,0.000000,0,5,False
+A4,Real World,2,0.000000,0.000000,0,5,False
+A4,Real World,4,0.000000,0.000000,0,5,False
+A4,Real World,8,0.000000,0.000000,0,5,False
