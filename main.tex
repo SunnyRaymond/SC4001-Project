@@ -1,0 +1,51 @@
+% Compile with XeLaTeX; select this file as the Overleaf main document.
+\documentclass[a4paper,10pt,onecolumn]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\usepackage{amsmath,amssymb,graphicx,booktabs,refcount}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/ViT-B-32-quickgelu/}}
+\newcommand{\todo}[1]{\par\noindent\textbf{[TO DO: #1]}\par}
+\newcommand{\reporttitle}{When Does Few-Shot CLIP Adaptation Harm Correct Predictions?}
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{25mm}
+{\Large Nanyang Technological University\par}
+\vspace{12mm}
+{\large SC4001 Neural Networks and Deep Learning\par}
+{\large Group Project --- Direction I\par}
+\vspace{20mm}
+{\LARGE\bfseries \reporttitle\par}
+\vspace{20mm}
+\textbf{Group number:} TO BE COMPLETED\par
+\vspace{8mm}
+\textbf{Team members:}\par
+TO BE COMPLETED\par
+\vfill
+Submission deadline: 16 November 2026, 23:59 (Singapore time)\par
+\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\input{report/sections/01-introduction}
+\input{report/sections/02-related-work}
+\input{report/sections/03-methods}
+\input{report/sections/04-setup}
+\input{report/sections/05-results}
+\input{report/sections/06-discussion}
+\input{report/sections/07-conclusion}
+\input{report/sections/08-ai-use}
+\label{body-end}
+\clearpage
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\todo{Create a verified bibliography from README Section 8 and cite original sources in the text.}
+\clearpage
+\appendix
+\section{Supplementary results}
+\todo{Optional: soft gate G2, per-domain details, selected hyperparameters and additional diagnostics. Keep all main evidence in the body.}
+\end{document}

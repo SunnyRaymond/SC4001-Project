@@ -1,0 +1,10 @@
+\section{Methods}
+\todo{Approx. 1.5 pages: define B0/B1, A1/A2/A4, G1, C1, C2, the oracle, and the VRF-style variant. Follow the actual scripts and fixed configs.}
+For an image with label $y$, let $\hat y_0$ and $\hat y_a$ denote the zero-shot and adapted predictions. Define
+\begin{align}
+\mathrm{help} &= \Pr(\hat y_0\ne y,\ \hat y_a=y),\\
+\mathrm{harm} &= \Pr(\hat y_0=y,\ \hat y_a\ne y).
+\end{align}
+Then $\Delta\mathrm{accuracy}=\mathrm{help}-\mathrm{harm}$. Conditional harm divides the harm count by the number of correct zero-shot predictions; it has a different denominator from the harm rate.
+% A2: prototype-initialized weights, full-batch Adam, no bias or explicit
+% regularization in fit_a2. Do not copy the planned regularization from README.

@@ -43,3 +43,19 @@ data/
 features/
 logs/
 results/*/adapt_probs.npz
+
+# Generated LaTeX build files (keep report source, tables and experimental figures)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+/main.pdf
+/output.pdf

@@ -1,0 +1,18 @@
+\section{Experiments and Results}
+\subsection{Accuracy gains and negative flips}
+\todo{Use Figures 1--2 and the generated K=4 tables. Discuss B1 as a no-label baseline. Explain that increasing K increases help without reliably reducing harm.}
+\input{report/tables/k4-accuracy}
+\input{report/tables/k4-harm}
+% Figure 1: fig1_accuracy_vs_k.png; Figure 2: fig2_help_harm.png.
+\subsection{Where adaptation helps and harms}
+\todo{Use Figure 3. Distinguish unconditional harm from conditional harm. Report H1 using the predefined criterion; do not turn a descriptive pattern into a causal claim.}
+% Figure 3: fig3_confidence_bins_k4.png; data: conf_bins.csv and h1.csv.
+\subsection{Confidence gating versus global mixing}
+\todo{Use Figure 4 and paired differences. Separate gains from A2 itself from gains due to gating. H2 meets its predefined comparison but the extra gain over A2 is small.}
+% Figure 4: fig4_gate_curves_k4.png; data: gating_summary.csv.
+% K=4 A2+G1 is 82.97 versus A2 82.99; the +0.04 pp gate gain in README
+% averages over ALL four K values. Do not mix these scopes.
+\subsection{VRF-style weighting in the few-shot setting}
+\todo{Report H3's negative result and the random-failure-set control V0. The distance signal is WEAKER than MSP. Figure 6 can move to the appendix if space is tight.}
+% Figure 6: fig6_vrf_signal.png; data: vrf_summary.csv, vrf_signal.csv.
+% Do not say VRF clearly beats its random-set control: the difference is tiny.
