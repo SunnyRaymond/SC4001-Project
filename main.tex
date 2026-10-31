@@ -5,7 +5,14 @@
 \setmainfont{Arial}
 \setsansfont{Arial}
 \usepackage{amsmath,amssymb,graphicx,booktabs,refcount}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[section]{placeins}
 \usepackage[hidelinks]{hyperref}
+\setcounter{topnumber}{3}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
 \graphicspath{{figures/ViT-B-32-quickgelu/}}
 \newcommand{\todo}[1]{\par\noindent\textbf{[TO DO: #1]}\par}
 \newcommand{\reporttitle}{When Does Few-Shot CLIP Adaptation Harm Correct Predictions?}
@@ -40,12 +47,13 @@ Submission deadline: 16 November 2026, 23:59 (Singapore time)\par
 \input{report/sections/07-conclusion}
 \input{report/sections/08-ai-use}
 \label{body-end}
+\typeout{SC4001-BODY-PAGES: \getpagerefnumber{body-end}}
 \clearpage
-\section*{References}
 \addcontentsline{toc}{section}{References}
-\todo{Create a verified bibliography from README Section 8 and cite original sources in the text.}
+\bibliographystyle{plainnat}
+\bibliography{report/references}
 \clearpage
 \appendix
 \section{Supplementary results}
-\todo{Optional: soft gate G2, per-domain details, selected hyperparameters and additional diagnostics. Keep all main evidence in the body.}
+\input{report/appendix/signal}
 \end{document}

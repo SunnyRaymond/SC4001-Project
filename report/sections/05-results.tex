@@ -1,18 +1,61 @@
 \section{Experiments and Results}
+\label{sec:results}
+Unless stated otherwise, accuracy, help and harm are percentages, with harm measured over \emph{all} test images relative to B0. Results average five seeds within each domain and weight the four domains equally. Differences in accuracy are in percentage points (pp). The confidence-bin plot instead pools image counts after forming deciles within each domain and seed. Paired comparisons use the same domain, $K$ and seed, giving 80 comparisons per adapter; their standard deviations describe variation across these conditions, not independent-sample confidence intervals.
+
 \subsection{Accuracy gains and negative flips}
-\todo{Use Figures 1--2 and the generated K=4 tables. Discuss B1 as a no-label baseline. Explain that increasing K increases help without reliably reducing harm.}
-\input{report/tables/k4-accuracy}
-\input{report/tables/k4-harm}
-% Figure 1: fig1_accuracy_vs_k.png; Figure 2: fig2_help_harm.png.
+Figure~\ref{fig:accuracy} shows that A2 and A4 outperform B0 on average at every tested $K$, whereas A1 remains below it. A1 rises from 50.87\% at one shot to 79.25\% at eight shots, still below B0's 79.63\%. A2 rises from 80.55\% to 84.33\%, and A4 from 80.40\% to 82.52\%. This pattern supports preserving zero-shot information during adaptation in this experiment. However, at one shot both adapters trail the label-free domain-prompt baseline B1 (80.79\%); a small labelled set is not automatically more useful than changing the prompt.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{report/figures/accuracy.pdf}
+\caption{Accuracy versus support size. A1: ordinary linear probe; A2: zero-shot-initialized probe; A4: Tip-Adapter. B0 and B1 are zero-shot references. Error bars show one sample standard deviation over five seeds.}
+\label{fig:accuracy}
+\end{figure}
+
+Table~\ref{tab:k4-main} reports both accuracy and harm at $K=4$. A2 gains 3.35 pp over B0, but its 7.09\% help rate is partly offset by 3.74\% harm. The conditional harm rate is 4.99\%: about one in twenty previously correct predictions becomes incorrect. Across $K=1,2,4,8$, A2's help grows from 4.69\% to 8.05\%, while harm remains between 3.35\% and 4.08\% (Figure~\ref{fig:flips}). Harm does not decrease monotonically with $K$; most of the increasing net benefit comes from additional corrections. A4 makes fewer negative flips at $K=4$ (1.95\%), but also corrects fewer errors (3.76\%). Its harm increases from 1.35\% to 2.05\% between one and eight shots. More support data therefore improves average accuracy without eliminating regression on individual images.
+
+\input{report/tables/k4-main}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{report/figures/flips.pdf}
+\caption{Help (above zero), harm (below zero) and net accuracy change relative to B0. Rates average domains and seeds equally. Increasing support size mainly expands A2's help, while negative flips persist.}
+\label{fig:flips}
+\end{figure}
+
 \subsection{Where adaptation helps and harms}
-\todo{Use Figure 3. Distinguish unconditional harm from conditional harm. Report H1 using the predefined criterion; do not turn a descriptive pattern into a causal claim.}
-% Figure 3: fig3_confidence_bins_k4.png; data: conf_bins.csv and h1.csv.
+At $K=4$, 90.3\% of A2's negative flips occur in the lower five zero-shot-confidence deciles. Yet these deciles also contain many corrections: the least-confident decile has a net gain of 14.88 pp (Figure~\ref{fig:confidence}). Thus, low confidence identifies a region where changing the prediction is often useful \emph{and} sometimes harmful. Confidence alone does not separate these two outcomes.
+
+The high-confidence hypothesis H1 specified non-positive net gain in the top 20\%, with rejection when a majority of seeds had positive gain. None of the 48 adapter--domain--$K$ conditions meets that rejection rule. This is consistent with H1 under its stated criterion, rather than proof of a strictly non-positive effect everywhere: small positive mean gains occur in some A2/A4 conditions, with at most one positive seed each. For A2 and A4, changes in these high-confidence bins are generally small. The useful diagnostic is the overlap of help and harm in lower-confidence bins, not merely the association of confidence with zero-shot correctness.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{report/figures/confidence.pdf}
+\caption{$K=4$ outcomes by B0 confidence decile. Left: help minus harm within each decile. Right: conditional harm, dividing negative flips by B0-correct images in that decile. Deciles are formed separately per domain and seed, then counts are pooled. Shading marks the top 20\%.}
+\label{fig:confidence}
+\end{figure}
+
 \subsection{Confidence gating versus global mixing}
-\todo{Use Figure 4 and paired differences. Separate gains from A2 itself from gains due to gating. H2 meets its predefined comparison but the extra gain over A2 is small.}
-% Figure 4: fig4_gate_curves_k4.png; data: gating_summary.csv.
-% K=4 A2+G1 is 82.97 versus A2 82.99; the +0.04 pp gate gain in README
-% averages over ALL four K values. Do not mix these scopes.
+The hard gate G1 returns high-confidence images to B0 and uses the adapter elsewhere. It outperforms the matched-retention random gate C2 by 1.37 pp for A2, winning 79 of 80 comparisons. However, its gain over the ungated adapter averages only 0.04 pp for A2 and 0.02 pp for A4 (Table~\ref{tab:gating-paired}). The larger 13.48 pp improvement for A1 mainly rescues a weak adapter. These results follow H2's predefined ordering of gating benefit (A1 $>$ A2 $>$ A4) and its comparison against C2, while offering little practical improvement over the stronger ungated adapters. This ordering does not by itself isolate the causal effect of zero-shot initialization.
+
+Fixed probability mixing C1 is stronger than G1 for A1 and A2: it wins 80/80 and 67/80 paired comparisons, respectively. For A4, the mean gap is small (C1 minus G1: $-0.03$ pp), so there is no uniform winner across adapters. At $K=4$, A2+G1 reaches 82.97\%, compared with 82.99\% for A2 and 83.24\% for A2+C1. Mixing also reduces A2's harm from 3.74\% to 2.43\%, whereas G1 reduces it to 3.53\%.
+
+\input{report/tables/gating-paired}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\linewidth]{report/figures/gates.pdf}
+\caption{Gate curves at $K=4$, averaged over domains and seeds. Curves sweep retained-image fractions for diagnosis using test outcomes; they are not used to select a threshold. The dot reports the source-selected G1 operating point, and the horizontal line reports source-selected C1. Random retention is shown in expectation.}
+\label{fig:gates}
+\end{figure}
+
+The confidence analysis helps explain the limited gate benefit. At $K=4$, G1 returns 52.2\% of A2's images to B0, but the low-confidence region, where most negative flips occur, remains assigned to the adapter. Raising the retained fraction would also discard useful corrections. In contrast, C1 keeps both probability vectors available for every image; their relative sharpness can affect the final class even with a fixed mixing weight. The evidence favours this compromise over an all-or-nothing confidence threshold in the present setting.
+
 \subsection{VRF-style weighting in the few-shot setting}
-\todo{Report H3's negative result and the random-failure-set control V0. The distance signal is WEAKER than MSP. Figure 6 can move to the appendix if space is tight.}
-% Figure 6: fig6_vrf_signal.png; data: vrf_summary.csv, vrf_signal.csv.
-% Do not say VRF clearly beats its random-set control: the difference is tiny.
+We next test whether distance to support examples that B0 misclassifies and the adapter classifies correctly provides a useful alternative signal. This is a few-shot variant of VRF~\citep{zhu2024vrf}: it uses frozen CLIP features and the target support set, rather than the original method's fine-tuned features and larger training set. The matched-size random-set control V0 keeps the selected weighting parameters unchanged.
+
+For A2, VRF-style weighting averages 0.05 pp below C1 and only 0.01 pp above V0 (Table~\ref{tab:vrf-paired}). It does not win a majority of paired comparisons against C1, so H3 is not supported. Across adapters the mean VRF--V0 differences are at most 0.04 pp. The failure-set signal therefore contributes little beyond the weighting scheme in these runs.
+
+\input{report/tables/vrf-paired}
+
+For A2, failure-set distance identifies B0 errors with mean AUROC 0.622, versus 0.500 for random-set distance and 0.887 for zero-shot uncertainty. At one shot, the failure set averages only 14.9 images. Moreover, 14 of the 16 A2 domain--$K$ conditions select the largest smoothing parameter $b=0.5$, which reduces the sensitivity of weights to distance. These diagnostics are consistent with a weak, sparsely estimated signal favouring relatively uniform mixing; they do not establish that sample-wise weighting fails with larger support sets or fine-tuned representations. Appendix~\ref{app:signal} provides the AUROC curves.

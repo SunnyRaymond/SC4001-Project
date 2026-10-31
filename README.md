@@ -590,6 +590,8 @@ Intro、Results、Discussion、Conclusion 都围绕这句话写。
 
 ## 9. AI 使用记录（供最终 AI Use Statement 使用）
 
+- **2026-10-31（报告第一轮写作）：** 使用 Codex 起草 Introduction、Results 和 Conclusion，建立六篇已查原始来源的 BibTeX 引用，从保存的 CSV 重排报告矢量图并生成配对差值表。核实方式：重算 help/harm、置信分箱、门控差值与 VRF 对照；检查 `help - harm = Δaccuracy`；区分域等权与按图像池化、K=4 与所有 K 的口径；对 CSV 舍入造成的微小差值明确数值平局容差。发现并在报告中收紧 H1、harm 随 K 变化和 VRF 随机对照的表述。其余章节、B1 参照复核和全组独立复现仍待完成；模型实际名称由组员在最终声明前确认。
+
 - **2026-10-31（报告搭建）：** 使用 Codex 读取课程 handout、README、部分训练/选参代码和结果 CSV，建立 A4 单栏 Arial 10pt 的 LaTeX 报告骨架，按现有结果生成含 B1 的 K=4 表格，并配置 GitHub / Overleaf 同步。核实方式：检查输入文件路径及表格列数、B0 数字与逐图预测的一致性；Overleaf XeLaTeX 编译 0 errors / 0 warnings；下载 PDF 后核对 A4 与嵌入的 Arial 字体，并检查正文和表格渲染。本次没有重跑训练实验，也没有独立验证全部文献。最终声明中的实际模型名与团队分工仍需组员确认。
 
 - **2026-10-13：** 使用 Codex 阅读 handout 与集群指南，生成 A–J 十个方向的选题草案（见 git 提交 `f92c718` 中的 README）。

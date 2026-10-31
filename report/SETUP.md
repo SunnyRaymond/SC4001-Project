@@ -1,6 +1,6 @@
 # SC4001 报告工作区
 
-这是报告骨架，正文尚未完成；已于 2026-10-31 在 Overleaf 通过 XeLaTeX 编译（0 errors / 0 warnings）。下载 PDF 后核对为 A4，正文嵌入 ArialMT / Arial-BoldMT，并检查了两页正文及结果表的渲染。当前共 6 页，其中正文 2 页；这是骨架页数，不代表最终报告页数。课程要求以仓库根目录的 project_handout.pdf 为准：A4、单栏、Arial 10pt，正文最多 10 页。封面、目录、参考文献和附录不计。不能套用群聊中的 AAAI 双栏模板。
+这是报告工作区。首次骨架于 2026-10-31 在 Overleaf 通过 XeLaTeX 编译（0 errors / 0 warnings），下载 PDF 后核对了 A4、嵌入的 Arial 字体和表格。Introduction、Results、Conclusion 的首轮英文初稿现已完成，其余章节待组员补写；具体进度和数字口径见 [WRITING_STATUS.md](WRITING_STATUS.md)。课程要求以仓库根目录的 project_handout.pdf 为准：A4、单栏、Arial 10pt，正文最多 10 页。封面、目录、参考文献和附录不计。不能套用群聊中的 AAAI 双栏模板。
 
 **Overleaf 项目：** https://www.overleaf.com/project/6ae58ae8c68c07d74ba7aefd
 
@@ -18,7 +18,9 @@
 
 - `main.tex`：课程格式、封面、目录、章节入口，正文与参考文献分页。
 - `report/sections/`：按 README 7.7 拆分的八个写作文件。TODO 必须在提交前清空。
-- `report/tables/`：运行 `python3 report/build_tables.py` 从提交的预测/汇总生成 K=4 准确率与 harm 表；包含 B1。**B1 这一行的 harm 以 B0 为参照，不是 README 7.8 要求的 B1 参照复核。**
+- `report/tables/`：运行 `python3 report/build_tables.py` 从提交的预测/汇总生成 K=4 准确率与 harm 表及门控、VRF 配对差值表；包含 B1。**B1 这一行的 harm 以 B0 为参照，不是 README 7.8 要求的 B1 参照复核。**
+- `report/figures/`：运行 `python3 report/build_figures.py` 从原始结果 CSV 重排单栏矢量图，不改变实验结果；原 `figures/` 的 PNG 保留。
+- `report/references.bib`：已核对本轮正文引用的六篇论文的原始来源；后续文献作者沿用现有 key 并补充条目。
 - 不手改生成表格。最终表应补上适当的 seed 不确定性，正文说明域等权平均与单位。
 - 不声称新发明 adapter、门控或 negative flip。论文相关性与“首次”主张还要查原文。
 
