@@ -42,3 +42,4 @@ Desktop.ini
 data/
 features/
 logs/
+results/*/adapt_probs.npz
