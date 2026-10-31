@@ -1,0 +1,781 @@
+method,domain,label,class_name,n,b0_right,harmed,cond_harm
+A1,Art,0,alarm clock,330,317,29,0.091483
+A1,Art,1,backpack,165,145,41,0.282759
+A1,Art,2,batteries,95,66,8,0.121212
+A1,Art,3,bed,160,141,39,0.276596
+A1,Art,4,bike,335,331,22,0.066465
+A1,Art,5,bottle,455,330,67,0.203030
+A1,Art,6,bucket,160,120,83,0.691667
+A1,Art,7,calculator,125,117,7,0.059829
+A1,Art,8,calendar,60,60,5,0.083333
+A1,Art,9,candles,340,310,39,0.125806
+A1,Art,10,chair,305,267,127,0.475655
+A1,Art,11,clipboards,85,46,23,0.500000
+A1,Art,12,computer,180,84,51,0.607143
+A1,Art,13,couch,160,134,68,0.507463
+A1,Art,14,curtains,160,137,36,0.262774
+A1,Art,15,desk lamp,75,39,25,0.641026
+A1,Art,16,drill,35,7,1,0.142857
+A1,Art,17,eraser,50,20,15,0.750000
+A1,Art,18,exit sign,65,58,1,0.017241
+A1,Art,19,fan,185,119,17,0.142857
+A1,Art,20,file cabinet,70,58,23,0.396552
+A1,Art,21,flipflops,190,190,14,0.073684
+A1,Art,22,flowers,410,381,2,0.005249
+A1,Art,23,folder,60,37,10,0.270270
+A1,Art,24,fork,190,139,42,0.302158
+A1,Art,25,glasses,160,160,39,0.243750
+A1,Art,26,hammer,160,104,42,0.403846
+A1,Art,27,helmet,355,346,64,0.184971
+A1,Art,28,kettle,190,172,35,0.203488
+A1,Art,29,keyboard,50,45,17,0.377778
+A1,Art,30,knives,320,268,19,0.070896
+A1,Art,31,lamp shade,205,151,73,0.483444
+A1,Art,32,laptop,215,173,84,0.485549
+A1,Art,33,marker,60,0,0,0.000000
+A1,Art,34,monitor,170,50,37,0.740000
+A1,Art,35,mop,120,72,33,0.458333
+A1,Art,36,mouse,50,33,4,0.121212
+A1,Art,37,mug,205,205,36,0.175610
+A1,Art,38,notebook,65,55,14,0.254545
+A1,Art,39,oven,60,47,20,0.425532
+A1,Art,40,pan,55,40,13,0.325000
+A1,Art,41,paper clip,55,23,11,0.478261
+A1,Art,42,pen,60,39,11,0.282051
+A1,Art,43,pencil,90,18,13,0.722222
+A1,Art,44,postit notes,55,49,11,0.224490
+A1,Art,45,printer,50,25,7,0.280000
+A1,Art,46,push pin,80,36,18,0.500000
+A1,Art,47,radio,195,172,29,0.168605
+A1,Art,48,refrigerator,205,183,82,0.448087
+A1,Art,49,ruler,35,30,10,0.333333
+A1,Art,50,scissors,60,44,13,0.295455
+A1,Art,51,screwdriver,110,82,24,0.292683
+A1,Art,52,shelf,170,84,42,0.500000
+A1,Art,53,sink,165,141,61,0.432624
+A1,Art,54,sneakers,190,188,10,0.053191
+A1,Art,55,soda,160,138,33,0.239130
+A1,Art,56,speaker,60,56,3,0.053571
+A1,Art,57,spoon,190,127,48,0.377953
+A1,Art,58,tv,160,142,10,0.070423
+A1,Art,59,table,40,26,5,0.192308
+A1,Art,60,telephone,180,139,8,0.057554
+A1,Art,61,toothbrush,175,128,34,0.265625
+A1,Art,62,toys,60,57,11,0.192982
+A1,Art,63,trash can,65,25,7,0.280000
+A1,Art,64,webcam,40,29,2,0.068966
+A1,Clipart,0,alarm clock,260,224,19,0.084821
+A1,Clipart,1,backpack,240,186,8,0.043011
+A1,Clipart,2,batteries,280,194,52,0.268041
+A1,Clipart,3,bed,450,365,67,0.183562
+A1,Clipart,4,bike,455,426,8,0.018779
+A1,Clipart,5,bottle,455,259,95,0.366795
+A1,Clipart,6,bucket,325,248,68,0.274194
+A1,Clipart,7,calculator,190,181,17,0.093923
+A1,Clipart,8,calendar,350,327,29,0.088685
+A1,Clipart,9,candles,455,350,95,0.271429
+A1,Clipart,10,chair,455,370,112,0.302703
+A1,Clipart,11,clipboards,160,60,23,0.383333
+A1,Clipart,12,computer,455,96,52,0.541667
+A1,Clipart,13,couch,280,172,32,0.186047
+A1,Clipart,14,curtains,170,142,49,0.345070
+A1,Clipart,15,desk lamp,165,50,34,0.680000
+A1,Clipart,16,drill,200,88,7,0.079545
+A1,Clipart,17,eraser,160,84,42,0.500000
+A1,Clipart,18,exit sign,165,156,5,0.032051
+A1,Clipart,19,fan,210,177,47,0.265537
+A1,Clipart,20,file cabinet,160,144,46,0.319444
+A1,Clipart,21,flipflops,160,157,14,0.089172
+A1,Clipart,22,flowers,455,415,15,0.036145
+A1,Clipart,23,folder,455,304,118,0.388158
+A1,Clipart,24,fork,265,130,50,0.384615
+A1,Clipart,25,glasses,220,210,18,0.085714
+A1,Clipart,26,hammer,455,342,158,0.461988
+A1,Clipart,27,helmet,305,274,104,0.379562
+A1,Clipart,28,kettle,160,135,27,0.200000
+A1,Clipart,29,keyboard,455,339,58,0.171091
+A1,Clipart,30,knives,225,136,60,0.441176
+A1,Clipart,31,lamp shade,160,97,47,0.484536
+A1,Clipart,32,laptop,455,352,129,0.366477
+A1,Clipart,33,marker,315,9,5,0.555556
+A1,Clipart,34,monitor,455,414,186,0.449275
+A1,Clipart,35,mop,160,45,15,0.333333
+A1,Clipart,36,mouse,340,76,9,0.118421
+A1,Clipart,37,mug,455,400,52,0.130000
+A1,Clipart,38,notebook,375,142,40,0.281690
+A1,Clipart,39,oven,160,113,36,0.318584
+A1,Clipart,40,pan,215,167,34,0.203593
+A1,Clipart,41,paper clip,160,113,8,0.070796
+A1,Clipart,42,pen,455,282,129,0.457447
+A1,Clipart,43,pencil,455,145,79,0.544828
+A1,Clipart,44,postit notes,165,78,51,0.653846
+A1,Clipart,45,printer,395,109,18,0.165138
+A1,Clipart,46,push pin,160,81,25,0.308642
+A1,Clipart,47,radio,190,105,17,0.161905
+A1,Clipart,48,refrigerator,160,65,13,0.200000
+A1,Clipart,49,ruler,295,267,58,0.217228
+A1,Clipart,50,scissors,455,378,80,0.211640
+A1,Clipart,51,screwdriver,335,187,56,0.299465
+A1,Clipart,52,shelf,170,88,32,0.363636
+A1,Clipart,53,sink,170,57,9,0.157895
+A1,Clipart,54,sneakers,175,167,17,0.101796
+A1,Clipart,55,soda,265,105,28,0.266667
+A1,Clipart,56,speaker,410,335,94,0.280597
+A1,Clipart,57,spoon,260,86,36,0.418605
+A1,Clipart,58,tv,455,261,33,0.126437
+A1,Clipart,59,table,360,257,41,0.159533
+A1,Clipart,60,telephone,455,279,34,0.121864
+A1,Clipart,61,toothbrush,155,86,9,0.104651
+A1,Clipart,62,toys,455,182,72,0.395604
+A1,Clipart,63,trash can,225,102,22,0.215686
+A1,Clipart,64,webcam,160,118,10,0.084746
+A1,Product,0,alarm clock,355,350,8,0.022857
+A1,Product,1,backpack,455,446,6,0.013453
+A1,Product,2,batteries,270,263,34,0.129278
+A1,Product,3,bed,175,175,8,0.045714
+A1,Product,4,bike,180,180,3,0.016667
+A1,Product,5,bottle,270,191,30,0.157068
+A1,Product,6,bucket,195,161,7,0.043478
+A1,Product,7,calculator,365,365,1,0.002740
+A1,Product,8,calendar,365,328,8,0.024390
+A1,Product,9,candles,240,235,24,0.102128
+A1,Product,10,chair,455,378,68,0.179894
+A1,Product,11,clipboards,285,156,63,0.403846
+A1,Product,12,computer,440,298,39,0.130872
+A1,Product,13,couch,400,368,4,0.010870
+A1,Product,14,curtains,335,321,33,0.102804
+A1,Product,15,desk lamp,375,351,40,0.113960
+A1,Product,16,drill,295,282,10,0.035461
+A1,Product,17,eraser,165,96,9,0.093750
+A1,Product,18,exit sign,295,290,3,0.010345
+A1,Product,19,fan,250,221,2,0.009050
+A1,Product,20,file cabinet,315,295,43,0.145763
+A1,Product,21,flipflops,455,419,17,0.040573
+A1,Product,22,flowers,415,415,1,0.002410
+A1,Product,23,folder,410,196,89,0.454082
+A1,Product,24,fork,165,132,16,0.121212
+A1,Product,25,glasses,295,295,2,0.006780
+A1,Product,26,hammer,245,186,10,0.053763
+A1,Product,27,helmet,410,387,17,0.043928
+A1,Product,28,kettle,320,315,21,0.066667
+A1,Product,29,keyboard,455,450,15,0.033333
+A1,Product,30,knives,165,162,30,0.185185
+A1,Product,31,lamp shade,230,200,9,0.045000
+A1,Product,32,laptop,455,450,26,0.057778
+A1,Product,33,marker,240,0,0,0.000000
+A1,Product,34,monitor,450,446,34,0.076233
+A1,Product,35,mop,320,283,31,0.109541
+A1,Product,36,mouse,440,345,9,0.026087
+A1,Product,37,mug,165,152,9,0.059211
+A1,Product,38,notebook,425,306,65,0.212418
+A1,Product,39,oven,300,300,3,0.010000
+A1,Product,40,pan,310,293,8,0.027304
+A1,Product,41,paper clip,195,171,27,0.157895
+A1,Product,42,pen,260,225,76,0.337778
+A1,Product,43,pencil,160,84,31,0.369048
+A1,Product,44,postit notes,150,145,15,0.103448
+A1,Product,45,printer,455,433,2,0.004619
+A1,Product,46,push pin,175,74,22,0.297297
+A1,Product,47,radio,175,143,11,0.076923
+A1,Product,48,refrigerator,255,247,3,0.012146
+A1,Product,49,ruler,250,229,6,0.026201
+A1,Product,50,scissors,455,403,29,0.071960
+A1,Product,51,screwdriver,160,145,15,0.103448
+A1,Product,52,shelf,205,178,40,0.224719
+A1,Product,53,sink,190,163,2,0.012270
+A1,Product,54,sneakers,455,428,16,0.037383
+A1,Product,55,soda,175,146,1,0.006849
+A1,Product,56,speaker,455,385,59,0.153247
+A1,Product,57,spoon,195,179,23,0.128492
+A1,Product,58,tv,340,267,42,0.157303
+A1,Product,59,table,260,250,22,0.088000
+A1,Product,60,telephone,250,194,3,0.015464
+A1,Product,61,toothbrush,170,164,22,0.134146
+A1,Product,62,toys,185,151,18,0.119205
+A1,Product,63,trash can,425,273,22,0.080586
+A1,Product,64,webcam,450,438,29,0.066210
+A1,Real World,0,alarm clock,390,390,41,0.105128
+A1,Real World,1,backpack,455,450,7,0.015556
+A1,Real World,2,batteries,280,280,10,0.035714
+A1,Real World,3,bed,375,362,62,0.171271
+A1,Real World,4,bike,455,455,12,0.026374
+A1,Real World,5,bottle,350,274,55,0.200730
+A1,Real World,6,bucket,360,318,87,0.273585
+A1,Real World,7,calculator,325,317,7,0.022082
+A1,Real World,8,calendar,300,300,2,0.006667
+A1,Real World,9,candles,455,455,26,0.057143
+A1,Real World,10,chair,440,430,40,0.093023
+A1,Real World,11,clipboards,285,184,99,0.538043
+A1,Real World,12,computer,280,131,23,0.175573
+A1,Real World,13,couch,340,288,62,0.215278
+A1,Real World,14,curtains,325,325,49,0.150769
+A1,Real World,15,desk lamp,270,234,67,0.286325
+A1,Real World,16,drill,215,150,15,0.100000
+A1,Real World,17,eraser,175,127,40,0.314961
+A1,Real World,18,exit sign,365,365,6,0.016438
+A1,Real World,19,fan,260,227,36,0.158590
+A1,Real World,20,file cabinet,250,232,69,0.297414
+A1,Real World,21,flipflops,385,376,22,0.058511
+A1,Real World,22,flowers,335,335,0,0.000000
+A1,Real World,23,folder,245,174,28,0.160920
+A1,Real World,24,fork,140,103,15,0.145631
+A1,Real World,25,glasses,260,260,10,0.038462
+A1,Real World,26,hammer,220,196,62,0.316327
+A1,Real World,27,helmet,260,256,30,0.117188
+A1,Real World,28,kettle,320,290,20,0.068966
+A1,Real World,29,keyboard,335,335,31,0.092537
+A1,Real World,30,knives,375,343,16,0.046647
+A1,Real World,31,lamp shade,350,315,83,0.263492
+A1,Real World,32,laptop,295,277,58,0.209386
+A1,Real World,33,marker,75,4,3,0.750000
+A1,Real World,34,monitor,315,264,115,0.435606
+A1,Real World,35,mop,190,135,30,0.222222
+A1,Real World,36,mouse,260,149,6,0.040268
+A1,Real World,37,mug,250,226,16,0.070796
+A1,Real World,38,notebook,300,211,53,0.251185
+A1,Real World,39,oven,280,196,59,0.301020
+A1,Real World,40,pan,110,110,33,0.300000
+A1,Real World,41,paper clip,300,199,46,0.231156
+A1,Real World,42,pen,285,260,48,0.184615
+A1,Real World,43,pencil,255,153,42,0.274510
+A1,Real World,44,postit notes,295,287,77,0.268293
+A1,Real World,45,printer,220,187,11,0.058824
+A1,Real World,46,push pin,225,104,43,0.413462
+A1,Real World,47,radio,290,256,24,0.093750
+A1,Real World,48,refrigerator,335,321,50,0.155763
+A1,Real World,49,ruler,165,161,12,0.074534
+A1,Real World,50,scissors,345,341,12,0.035191
+A1,Real World,51,screwdriver,215,169,35,0.207101
+A1,Real World,52,shelf,290,228,99,0.434211
+A1,Real World,53,sink,345,313,20,0.063898
+A1,Real World,54,sneakers,400,400,10,0.025000
+A1,Real World,55,soda,275,234,32,0.136752
+A1,Real World,56,speaker,365,320,61,0.190625
+A1,Real World,57,spoon,230,189,67,0.354497
+A1,Real World,58,tv,225,156,24,0.153846
+A1,Real World,59,table,255,246,75,0.304878
+A1,Real World,60,telephone,370,351,24,0.068376
+A1,Real World,61,toothbrush,385,350,49,0.140000
+A1,Real World,62,toys,295,271,58,0.214022
+A1,Real World,63,trash can,365,266,37,0.139098
+A1,Real World,64,webcam,205,195,16,0.082051
+A2,Art,0,alarm clock,330,317,14,0.044164
+A2,Art,1,backpack,165,145,10,0.068966
+A2,Art,2,batteries,95,66,1,0.015152
+A2,Art,3,bed,160,141,14,0.099291
+A2,Art,4,bike,335,331,0,0.000000
+A2,Art,5,bottle,455,330,5,0.015152
+A2,Art,6,bucket,160,120,19,0.158333
+A2,Art,7,calculator,125,117,2,0.017094
+A2,Art,8,calendar,60,60,1,0.016667
+A2,Art,9,candles,340,310,6,0.019355
+A2,Art,10,chair,305,267,26,0.097378
+A2,Art,11,clipboards,85,46,5,0.108696
+A2,Art,12,computer,180,84,20,0.238095
+A2,Art,13,couch,160,134,8,0.059701
+A2,Art,14,curtains,160,137,6,0.043796
+A2,Art,15,desk lamp,75,39,2,0.051282
+A2,Art,16,drill,35,7,0,0.000000
+A2,Art,17,eraser,50,20,1,0.050000
+A2,Art,18,exit sign,65,58,0,0.000000
+A2,Art,19,fan,185,119,4,0.033613
+A2,Art,20,file cabinet,70,58,6,0.103448
+A2,Art,21,flipflops,190,190,4,0.021053
+A2,Art,22,flowers,410,381,0,0.000000
+A2,Art,23,folder,60,37,5,0.135135
+A2,Art,24,fork,190,139,4,0.028777
+A2,Art,25,glasses,160,160,4,0.025000
+A2,Art,26,hammer,160,104,7,0.067308
+A2,Art,27,helmet,355,346,14,0.040462
+A2,Art,28,kettle,190,172,2,0.011628
+A2,Art,29,keyboard,50,45,1,0.022222
+A2,Art,30,knives,320,268,11,0.041045
+A2,Art,31,lamp shade,205,151,30,0.198675
+A2,Art,32,laptop,215,173,28,0.161850
+A2,Art,33,marker,60,0,0,0.000000
+A2,Art,34,monitor,170,50,13,0.260000
+A2,Art,35,mop,120,72,8,0.111111
+A2,Art,36,mouse,50,33,0,0.000000
+A2,Art,37,mug,205,205,4,0.019512
+A2,Art,38,notebook,65,55,0,0.000000
+A2,Art,39,oven,60,47,1,0.021277
+A2,Art,40,pan,55,40,1,0.025000
+A2,Art,41,paper clip,55,23,0,0.000000
+A2,Art,42,pen,60,39,5,0.128205
+A2,Art,43,pencil,90,18,3,0.166667
+A2,Art,44,postit notes,55,49,1,0.020408
+A2,Art,45,printer,50,25,0,0.000000
+A2,Art,46,push pin,80,36,3,0.083333
+A2,Art,47,radio,195,172,13,0.075581
+A2,Art,48,refrigerator,205,183,13,0.071038
+A2,Art,49,ruler,35,30,3,0.100000
+A2,Art,50,scissors,60,44,4,0.090909
+A2,Art,51,screwdriver,110,82,2,0.024390
+A2,Art,52,shelf,170,84,7,0.083333
+A2,Art,53,sink,165,141,2,0.014184
+A2,Art,54,sneakers,190,188,0,0.000000
+A2,Art,55,soda,160,138,6,0.043478
+A2,Art,56,speaker,60,56,1,0.017857
+A2,Art,57,spoon,190,127,6,0.047244
+A2,Art,58,tv,160,142,6,0.042254
+A2,Art,59,table,40,26,0,0.000000
+A2,Art,60,telephone,180,139,1,0.007194
+A2,Art,61,toothbrush,175,128,1,0.007812
+A2,Art,62,toys,60,57,12,0.210526
+A2,Art,63,trash can,65,25,0,0.000000
+A2,Art,64,webcam,40,29,0,0.000000
+A2,Clipart,0,alarm clock,260,224,4,0.017857
+A2,Clipart,1,backpack,240,186,2,0.010753
+A2,Clipart,2,batteries,280,194,30,0.154639
+A2,Clipart,3,bed,450,365,11,0.030137
+A2,Clipart,4,bike,455,426,0,0.000000
+A2,Clipart,5,bottle,455,259,21,0.081081
+A2,Clipart,6,bucket,325,248,29,0.116935
+A2,Clipart,7,calculator,190,181,15,0.082873
+A2,Clipart,8,calendar,350,327,8,0.024465
+A2,Clipart,9,candles,455,350,20,0.057143
+A2,Clipart,10,chair,455,370,30,0.081081
+A2,Clipart,11,clipboards,160,60,4,0.066667
+A2,Clipart,12,computer,455,96,22,0.229167
+A2,Clipart,13,couch,280,172,7,0.040698
+A2,Clipart,14,curtains,170,142,10,0.070423
+A2,Clipart,15,desk lamp,165,50,8,0.160000
+A2,Clipart,16,drill,200,88,2,0.022727
+A2,Clipart,17,eraser,160,84,8,0.095238
+A2,Clipart,18,exit sign,165,156,5,0.032051
+A2,Clipart,19,fan,210,177,25,0.141243
+A2,Clipart,20,file cabinet,160,144,29,0.201389
+A2,Clipart,21,flipflops,160,157,4,0.025478
+A2,Clipart,22,flowers,455,415,2,0.004819
+A2,Clipart,23,folder,455,304,70,0.230263
+A2,Clipart,24,fork,265,130,25,0.192308
+A2,Clipart,25,glasses,220,210,8,0.038095
+A2,Clipart,26,hammer,455,342,102,0.298246
+A2,Clipart,27,helmet,305,274,21,0.076642
+A2,Clipart,28,kettle,160,135,7,0.051852
+A2,Clipart,29,keyboard,455,339,15,0.044248
+A2,Clipart,30,knives,225,136,18,0.132353
+A2,Clipart,31,lamp shade,160,97,21,0.216495
+A2,Clipart,32,laptop,455,352,88,0.250000
+A2,Clipart,33,marker,315,9,0,0.000000
+A2,Clipart,34,monitor,455,414,106,0.256039
+A2,Clipart,35,mop,160,45,1,0.022222
+A2,Clipart,36,mouse,340,76,0,0.000000
+A2,Clipart,37,mug,455,400,17,0.042500
+A2,Clipart,38,notebook,375,142,6,0.042254
+A2,Clipart,39,oven,160,113,9,0.079646
+A2,Clipart,40,pan,215,167,14,0.083832
+A2,Clipart,41,paper clip,160,113,0,0.000000
+A2,Clipart,42,pen,455,282,72,0.255319
+A2,Clipart,43,pencil,455,145,42,0.289655
+A2,Clipart,44,postit notes,165,78,5,0.064103
+A2,Clipart,45,printer,395,109,1,0.009174
+A2,Clipart,46,push pin,160,81,6,0.074074
+A2,Clipart,47,radio,190,105,3,0.028571
+A2,Clipart,48,refrigerator,160,65,1,0.015385
+A2,Clipart,49,ruler,295,267,25,0.093633
+A2,Clipart,50,scissors,455,378,10,0.026455
+A2,Clipart,51,screwdriver,335,187,24,0.128342
+A2,Clipart,52,shelf,170,88,15,0.170455
+A2,Clipart,53,sink,170,57,0,0.000000
+A2,Clipart,54,sneakers,175,167,12,0.071856
+A2,Clipart,55,soda,265,105,5,0.047619
+A2,Clipart,56,speaker,410,335,48,0.143284
+A2,Clipart,57,spoon,260,86,8,0.093023
+A2,Clipart,58,tv,455,261,14,0.053640
+A2,Clipart,59,table,360,257,11,0.042802
+A2,Clipart,60,telephone,455,279,4,0.014337
+A2,Clipart,61,toothbrush,155,86,2,0.023256
+A2,Clipart,62,toys,455,182,7,0.038462
+A2,Clipart,63,trash can,225,102,5,0.049020
+A2,Clipart,64,webcam,160,118,4,0.033898
+A2,Product,0,alarm clock,355,350,2,0.005714
+A2,Product,1,backpack,455,446,6,0.013453
+A2,Product,2,batteries,270,263,22,0.083650
+A2,Product,3,bed,175,175,1,0.005714
+A2,Product,4,bike,180,180,1,0.005556
+A2,Product,5,bottle,270,191,4,0.020942
+A2,Product,6,bucket,195,161,5,0.031056
+A2,Product,7,calculator,365,365,1,0.002740
+A2,Product,8,calendar,365,328,3,0.009146
+A2,Product,9,candles,240,235,10,0.042553
+A2,Product,10,chair,455,378,4,0.010582
+A2,Product,11,clipboards,285,156,17,0.108974
+A2,Product,12,computer,440,298,14,0.046980
+A2,Product,13,couch,400,368,3,0.008152
+A2,Product,14,curtains,335,321,6,0.018692
+A2,Product,15,desk lamp,375,351,3,0.008547
+A2,Product,16,drill,295,282,6,0.021277
+A2,Product,17,eraser,165,96,2,0.020833
+A2,Product,18,exit sign,295,290,0,0.000000
+A2,Product,19,fan,250,221,3,0.013575
+A2,Product,20,file cabinet,315,295,18,0.061017
+A2,Product,21,flipflops,455,419,16,0.038186
+A2,Product,22,flowers,415,415,0,0.000000
+A2,Product,23,folder,410,196,27,0.137755
+A2,Product,24,fork,165,132,9,0.068182
+A2,Product,25,glasses,295,295,0,0.000000
+A2,Product,26,hammer,245,186,0,0.000000
+A2,Product,27,helmet,410,387,3,0.007752
+A2,Product,28,kettle,320,315,10,0.031746
+A2,Product,29,keyboard,455,450,2,0.004444
+A2,Product,30,knives,165,162,9,0.055556
+A2,Product,31,lamp shade,230,200,3,0.015000
+A2,Product,32,laptop,455,450,11,0.024444
+A2,Product,33,marker,240,0,0,0.000000
+A2,Product,34,monitor,450,446,27,0.060538
+A2,Product,35,mop,320,283,4,0.014134
+A2,Product,36,mouse,440,345,0,0.000000
+A2,Product,37,mug,165,152,5,0.032895
+A2,Product,38,notebook,425,306,22,0.071895
+A2,Product,39,oven,300,300,1,0.003333
+A2,Product,40,pan,310,293,5,0.017065
+A2,Product,41,paper clip,195,171,0,0.000000
+A2,Product,42,pen,260,225,54,0.240000
+A2,Product,43,pencil,160,84,4,0.047619
+A2,Product,44,postit notes,150,145,3,0.020690
+A2,Product,45,printer,455,433,0,0.000000
+A2,Product,46,push pin,175,74,2,0.027027
+A2,Product,47,radio,175,143,1,0.006993
+A2,Product,48,refrigerator,255,247,0,0.000000
+A2,Product,49,ruler,250,229,14,0.061135
+A2,Product,50,scissors,455,403,2,0.004963
+A2,Product,51,screwdriver,160,145,5,0.034483
+A2,Product,52,shelf,205,178,2,0.011236
+A2,Product,53,sink,190,163,0,0.000000
+A2,Product,54,sneakers,455,428,7,0.016355
+A2,Product,55,soda,175,146,0,0.000000
+A2,Product,56,speaker,455,385,26,0.067532
+A2,Product,57,spoon,195,179,7,0.039106
+A2,Product,58,tv,340,267,2,0.007491
+A2,Product,59,table,260,250,6,0.024000
+A2,Product,60,telephone,250,194,0,0.000000
+A2,Product,61,toothbrush,170,164,2,0.012195
+A2,Product,62,toys,185,151,7,0.046358
+A2,Product,63,trash can,425,273,3,0.010989
+A2,Product,64,webcam,450,438,25,0.057078
+A2,Real World,0,alarm clock,390,390,19,0.048718
+A2,Real World,1,backpack,455,450,3,0.006667
+A2,Real World,2,batteries,280,280,11,0.039286
+A2,Real World,3,bed,375,362,5,0.013812
+A2,Real World,4,bike,455,455,0,0.000000
+A2,Real World,5,bottle,350,274,7,0.025547
+A2,Real World,6,bucket,360,318,9,0.028302
+A2,Real World,7,calculator,325,317,2,0.006309
+A2,Real World,8,calendar,300,300,0,0.000000
+A2,Real World,9,candles,455,455,3,0.006593
+A2,Real World,10,chair,440,430,1,0.002326
+A2,Real World,11,clipboards,285,184,22,0.119565
+A2,Real World,12,computer,280,131,10,0.076336
+A2,Real World,13,couch,340,288,3,0.010417
+A2,Real World,14,curtains,325,325,2,0.006154
+A2,Real World,15,desk lamp,270,234,12,0.051282
+A2,Real World,16,drill,215,150,12,0.080000
+A2,Real World,17,eraser,175,127,5,0.039370
+A2,Real World,18,exit sign,365,365,1,0.002740
+A2,Real World,19,fan,260,227,1,0.004405
+A2,Real World,20,file cabinet,250,232,13,0.056034
+A2,Real World,21,flipflops,385,376,5,0.013298
+A2,Real World,22,flowers,335,335,0,0.000000
+A2,Real World,23,folder,245,174,10,0.057471
+A2,Real World,24,fork,140,103,3,0.029126
+A2,Real World,25,glasses,260,260,0,0.000000
+A2,Real World,26,hammer,220,196,2,0.010204
+A2,Real World,27,helmet,260,256,1,0.003906
+A2,Real World,28,kettle,320,290,4,0.013793
+A2,Real World,29,keyboard,335,335,11,0.032836
+A2,Real World,30,knives,375,343,15,0.043732
+A2,Real World,31,lamp shade,350,315,20,0.063492
+A2,Real World,32,laptop,295,277,23,0.083032
+A2,Real World,33,marker,75,4,0,0.000000
+A2,Real World,34,monitor,315,264,57,0.215909
+A2,Real World,35,mop,190,135,3,0.022222
+A2,Real World,36,mouse,260,149,0,0.000000
+A2,Real World,37,mug,250,226,1,0.004425
+A2,Real World,38,notebook,300,211,5,0.023697
+A2,Real World,39,oven,280,196,12,0.061224
+A2,Real World,40,pan,110,110,9,0.081818
+A2,Real World,41,paper clip,300,199,4,0.020101
+A2,Real World,42,pen,285,260,26,0.100000
+A2,Real World,43,pencil,255,153,10,0.065359
+A2,Real World,44,postit notes,295,287,9,0.031359
+A2,Real World,45,printer,220,187,1,0.005348
+A2,Real World,46,push pin,225,104,1,0.009615
+A2,Real World,47,radio,290,256,14,0.054688
+A2,Real World,48,refrigerator,335,321,9,0.028037
+A2,Real World,49,ruler,165,161,7,0.043478
+A2,Real World,50,scissors,345,341,11,0.032258
+A2,Real World,51,screwdriver,215,169,8,0.047337
+A2,Real World,52,shelf,290,228,11,0.048246
+A2,Real World,53,sink,345,313,1,0.003195
+A2,Real World,54,sneakers,400,400,0,0.000000
+A2,Real World,55,soda,275,234,5,0.021368
+A2,Real World,56,speaker,365,320,10,0.031250
+A2,Real World,57,spoon,230,189,19,0.100529
+A2,Real World,58,tv,225,156,2,0.012821
+A2,Real World,59,table,255,246,11,0.044715
+A2,Real World,60,telephone,370,351,2,0.005698
+A2,Real World,61,toothbrush,385,350,10,0.028571
+A2,Real World,62,toys,295,271,24,0.088561
+A2,Real World,63,trash can,365,266,0,0.000000
+A2,Real World,64,webcam,205,195,4,0.020513
+A4,Art,0,alarm clock,330,317,8,0.025237
+A4,Art,1,backpack,165,145,1,0.006897
+A4,Art,2,batteries,95,66,0,0.000000
+A4,Art,3,bed,160,141,1,0.007092
+A4,Art,4,bike,335,331,0,0.000000
+A4,Art,5,bottle,455,330,3,0.009091
+A4,Art,6,bucket,160,120,3,0.025000
+A4,Art,7,calculator,125,117,3,0.025641
+A4,Art,8,calendar,60,60,0,0.000000
+A4,Art,9,candles,340,310,0,0.000000
+A4,Art,10,chair,305,267,6,0.022472
+A4,Art,11,clipboards,85,46,4,0.086957
+A4,Art,12,computer,180,84,6,0.071429
+A4,Art,13,couch,160,134,11,0.082090
+A4,Art,14,curtains,160,137,4,0.029197
+A4,Art,15,desk lamp,75,39,0,0.000000
+A4,Art,16,drill,35,7,0,0.000000
+A4,Art,17,eraser,50,20,1,0.050000
+A4,Art,18,exit sign,65,58,0,0.000000
+A4,Art,19,fan,185,119,0,0.000000
+A4,Art,20,file cabinet,70,58,0,0.000000
+A4,Art,21,flipflops,190,190,0,0.000000
+A4,Art,22,flowers,410,381,0,0.000000
+A4,Art,23,folder,60,37,3,0.081081
+A4,Art,24,fork,190,139,2,0.014388
+A4,Art,25,glasses,160,160,0,0.000000
+A4,Art,26,hammer,160,104,1,0.009615
+A4,Art,27,helmet,355,346,0,0.000000
+A4,Art,28,kettle,190,172,2,0.011628
+A4,Art,29,keyboard,50,45,0,0.000000
+A4,Art,30,knives,320,268,0,0.000000
+A4,Art,31,lamp shade,205,151,12,0.079470
+A4,Art,32,laptop,215,173,9,0.052023
+A4,Art,33,marker,60,0,0,0.000000
+A4,Art,34,monitor,170,50,7,0.140000
+A4,Art,35,mop,120,72,0,0.000000
+A4,Art,36,mouse,50,33,1,0.030303
+A4,Art,37,mug,205,205,1,0.004878
+A4,Art,38,notebook,65,55,0,0.000000
+A4,Art,39,oven,60,47,0,0.000000
+A4,Art,40,pan,55,40,1,0.025000
+A4,Art,41,paper clip,55,23,0,0.000000
+A4,Art,42,pen,60,39,0,0.000000
+A4,Art,43,pencil,90,18,5,0.277778
+A4,Art,44,postit notes,55,49,0,0.000000
+A4,Art,45,printer,50,25,0,0.000000
+A4,Art,46,push pin,80,36,0,0.000000
+A4,Art,47,radio,195,172,1,0.005814
+A4,Art,48,refrigerator,205,183,0,0.000000
+A4,Art,49,ruler,35,30,0,0.000000
+A4,Art,50,scissors,60,44,0,0.000000
+A4,Art,51,screwdriver,110,82,2,0.024390
+A4,Art,52,shelf,170,84,6,0.071429
+A4,Art,53,sink,165,141,0,0.000000
+A4,Art,54,sneakers,190,188,0,0.000000
+A4,Art,55,soda,160,138,3,0.021739
+A4,Art,56,speaker,60,56,1,0.017857
+A4,Art,57,spoon,190,127,0,0.000000
+A4,Art,58,tv,160,142,0,0.000000
+A4,Art,59,table,40,26,0,0.000000
+A4,Art,60,telephone,180,139,0,0.000000
+A4,Art,61,toothbrush,175,128,0,0.000000
+A4,Art,62,toys,60,57,3,0.052632
+A4,Art,63,trash can,65,25,0,0.000000
+A4,Art,64,webcam,40,29,0,0.000000
+A4,Clipart,0,alarm clock,260,224,0,0.000000
+A4,Clipart,1,backpack,240,186,1,0.005376
+A4,Clipart,2,batteries,280,194,19,0.097938
+A4,Clipart,3,bed,450,365,5,0.013699
+A4,Clipart,4,bike,455,426,0,0.000000
+A4,Clipart,5,bottle,455,259,17,0.065637
+A4,Clipart,6,bucket,325,248,9,0.036290
+A4,Clipart,7,calculator,190,181,0,0.000000
+A4,Clipart,8,calendar,350,327,10,0.030581
+A4,Clipart,9,candles,455,350,15,0.042857
+A4,Clipart,10,chair,455,370,4,0.010811
+A4,Clipart,11,clipboards,160,60,8,0.133333
+A4,Clipart,12,computer,455,96,38,0.395833
+A4,Clipart,13,couch,280,172,15,0.087209
+A4,Clipart,14,curtains,170,142,12,0.084507
+A4,Clipart,15,desk lamp,165,50,10,0.200000
+A4,Clipart,16,drill,200,88,6,0.068182
+A4,Clipart,17,eraser,160,84,6,0.071429
+A4,Clipart,18,exit sign,165,156,0,0.000000
+A4,Clipart,19,fan,210,177,17,0.096045
+A4,Clipart,20,file cabinet,160,144,2,0.013889
+A4,Clipart,21,flipflops,160,157,3,0.019108
+A4,Clipart,22,flowers,455,415,1,0.002410
+A4,Clipart,23,folder,455,304,29,0.095395
+A4,Clipart,24,fork,265,130,15,0.115385
+A4,Clipart,25,glasses,220,210,0,0.000000
+A4,Clipart,26,hammer,455,342,26,0.076023
+A4,Clipart,27,helmet,305,274,11,0.040146
+A4,Clipart,28,kettle,160,135,4,0.029630
+A4,Clipart,29,keyboard,455,339,24,0.070796
+A4,Clipart,30,knives,225,136,16,0.117647
+A4,Clipart,31,lamp shade,160,97,13,0.134021
+A4,Clipart,32,laptop,455,352,55,0.156250
+A4,Clipart,33,marker,315,9,0,0.000000
+A4,Clipart,34,monitor,455,414,23,0.055556
+A4,Clipart,35,mop,160,45,7,0.155556
+A4,Clipart,36,mouse,340,76,6,0.078947
+A4,Clipart,37,mug,455,400,5,0.012500
+A4,Clipart,38,notebook,375,142,24,0.169014
+A4,Clipart,39,oven,160,113,7,0.061947
+A4,Clipart,40,pan,215,167,6,0.035928
+A4,Clipart,41,paper clip,160,113,0,0.000000
+A4,Clipart,42,pen,455,282,39,0.138298
+A4,Clipart,43,pencil,455,145,38,0.262069
+A4,Clipart,44,postit notes,165,78,18,0.230769
+A4,Clipart,45,printer,395,109,8,0.073394
+A4,Clipart,46,push pin,160,81,5,0.061728
+A4,Clipart,47,radio,190,105,9,0.085714
+A4,Clipart,48,refrigerator,160,65,2,0.030769
+A4,Clipart,49,ruler,295,267,5,0.018727
+A4,Clipart,50,scissors,455,378,1,0.002646
+A4,Clipart,51,screwdriver,335,187,6,0.032086
+A4,Clipart,52,shelf,170,88,12,0.136364
+A4,Clipart,53,sink,170,57,2,0.035088
+A4,Clipart,54,sneakers,175,167,11,0.065868
+A4,Clipart,55,soda,265,105,4,0.038095
+A4,Clipart,56,speaker,410,335,26,0.077612
+A4,Clipart,57,spoon,260,86,10,0.116279
+A4,Clipart,58,tv,455,261,9,0.034483
+A4,Clipart,59,table,360,257,7,0.027237
+A4,Clipart,60,telephone,455,279,20,0.071685
+A4,Clipart,61,toothbrush,155,86,9,0.104651
+A4,Clipart,62,toys,455,182,13,0.071429
+A4,Clipart,63,trash can,225,102,15,0.147059
+A4,Clipart,64,webcam,160,118,6,0.050847
+A4,Product,0,alarm clock,355,350,0,0.000000
+A4,Product,1,backpack,455,446,0,0.000000
+A4,Product,2,batteries,270,263,1,0.003802
+A4,Product,3,bed,175,175,0,0.000000
+A4,Product,4,bike,180,180,0,0.000000
+A4,Product,5,bottle,270,191,12,0.062827
+A4,Product,6,bucket,195,161,1,0.006211
+A4,Product,7,calculator,365,365,0,0.000000
+A4,Product,8,calendar,365,328,4,0.012195
+A4,Product,9,candles,240,235,3,0.012766
+A4,Product,10,chair,455,378,13,0.034392
+A4,Product,11,clipboards,285,156,16,0.102564
+A4,Product,12,computer,440,298,10,0.033557
+A4,Product,13,couch,400,368,0,0.000000
+A4,Product,14,curtains,335,321,1,0.003115
+A4,Product,15,desk lamp,375,351,6,0.017094
+A4,Product,16,drill,295,282,3,0.010638
+A4,Product,17,eraser,165,96,0,0.000000
+A4,Product,18,exit sign,295,290,0,0.000000
+A4,Product,19,fan,250,221,0,0.000000
+A4,Product,20,file cabinet,315,295,3,0.010169
+A4,Product,21,flipflops,455,419,1,0.002387
+A4,Product,22,flowers,415,415,0,0.000000
+A4,Product,23,folder,410,196,21,0.107143
+A4,Product,24,fork,165,132,2,0.015152
+A4,Product,25,glasses,295,295,0,0.000000
+A4,Product,26,hammer,245,186,2,0.010753
+A4,Product,27,helmet,410,387,0,0.000000
+A4,Product,28,kettle,320,315,0,0.000000
+A4,Product,29,keyboard,455,450,0,0.000000
+A4,Product,30,knives,165,162,4,0.024691
+A4,Product,31,lamp shade,230,200,0,0.000000
+A4,Product,32,laptop,455,450,0,0.000000
+A4,Product,33,marker,240,0,0,0.000000
+A4,Product,34,monitor,450,446,1,0.002242
+A4,Product,35,mop,320,283,2,0.007067
+A4,Product,36,mouse,440,345,2,0.005797
+A4,Product,37,mug,165,152,9,0.059211
+A4,Product,38,notebook,425,306,21,0.068627
+A4,Product,39,oven,300,300,0,0.000000
+A4,Product,40,pan,310,293,0,0.000000
+A4,Product,41,paper clip,195,171,2,0.011696
+A4,Product,42,pen,260,225,3,0.013333
+A4,Product,43,pencil,160,84,11,0.130952
+A4,Product,44,postit notes,150,145,2,0.013793
+A4,Product,45,printer,455,433,0,0.000000
+A4,Product,46,push pin,175,74,8,0.108108
+A4,Product,47,radio,175,143,3,0.020979
+A4,Product,48,refrigerator,255,247,1,0.004049
+A4,Product,49,ruler,250,229,0,0.000000
+A4,Product,50,scissors,455,403,1,0.002481
+A4,Product,51,screwdriver,160,145,7,0.048276
+A4,Product,52,shelf,205,178,8,0.044944
+A4,Product,53,sink,190,163,0,0.000000
+A4,Product,54,sneakers,455,428,5,0.011682
+A4,Product,55,soda,175,146,0,0.000000
+A4,Product,56,speaker,455,385,5,0.012987
+A4,Product,57,spoon,195,179,5,0.027933
+A4,Product,58,tv,340,267,4,0.014981
+A4,Product,59,table,260,250,1,0.004000
+A4,Product,60,telephone,250,194,0,0.000000
+A4,Product,61,toothbrush,170,164,9,0.054878
+A4,Product,62,toys,185,151,2,0.013245
+A4,Product,63,trash can,425,273,1,0.003663
+A4,Product,64,webcam,450,438,3,0.006849
+A4,Real World,0,alarm clock,390,390,8,0.020513
+A4,Real World,1,backpack,455,450,1,0.002222
+A4,Real World,2,batteries,280,280,0,0.000000
+A4,Real World,3,bed,375,362,4,0.011050
+A4,Real World,4,bike,455,455,0,0.000000
+A4,Real World,5,bottle,350,274,2,0.007299
+A4,Real World,6,bucket,360,318,2,0.006289
+A4,Real World,7,calculator,325,317,1,0.003155
+A4,Real World,8,calendar,300,300,0,0.000000
+A4,Real World,9,candles,455,455,0,0.000000
+A4,Real World,10,chair,440,430,0,0.000000
+A4,Real World,11,clipboards,285,184,21,0.114130
+A4,Real World,12,computer,280,131,7,0.053435
+A4,Real World,13,couch,340,288,0,0.000000
+A4,Real World,14,curtains,325,325,1,0.003077
+A4,Real World,15,desk lamp,270,234,2,0.008547
+A4,Real World,16,drill,215,150,8,0.053333
+A4,Real World,17,eraser,175,127,3,0.023622
+A4,Real World,18,exit sign,365,365,0,0.000000
+A4,Real World,19,fan,260,227,0,0.000000
+A4,Real World,20,file cabinet,250,232,3,0.012931
+A4,Real World,21,flipflops,385,376,7,0.018617
+A4,Real World,22,flowers,335,335,0,0.000000
+A4,Real World,23,folder,245,174,4,0.022989
+A4,Real World,24,fork,140,103,4,0.038835
+A4,Real World,25,glasses,260,260,0,0.000000
+A4,Real World,26,hammer,220,196,2,0.010204
+A4,Real World,27,helmet,260,256,1,0.003906
+A4,Real World,28,kettle,320,290,0,0.000000
+A4,Real World,29,keyboard,335,335,3,0.008955
+A4,Real World,30,knives,375,343,4,0.011662
+A4,Real World,31,lamp shade,350,315,17,0.053968
+A4,Real World,32,laptop,295,277,7,0.025271
+A4,Real World,33,marker,75,4,1,0.250000
+A4,Real World,34,monitor,315,264,30,0.113636
+A4,Real World,35,mop,190,135,2,0.014815
+A4,Real World,36,mouse,260,149,9,0.060403
+A4,Real World,37,mug,250,226,2,0.008850
+A4,Real World,38,notebook,300,211,4,0.018957
+A4,Real World,39,oven,280,196,12,0.061224
+A4,Real World,40,pan,110,110,1,0.009091
+A4,Real World,41,paper clip,300,199,5,0.025126
+A4,Real World,42,pen,285,260,3,0.011538
+A4,Real World,43,pencil,255,153,8,0.052288
+A4,Real World,44,postit notes,295,287,4,0.013937
+A4,Real World,45,printer,220,187,2,0.010695
+A4,Real World,46,push pin,225,104,8,0.076923
+A4,Real World,47,radio,290,256,3,0.011719
+A4,Real World,48,refrigerator,335,321,5,0.015576
+A4,Real World,49,ruler,165,161,4,0.024845
+A4,Real World,50,scissors,345,341,1,0.002933
+A4,Real World,51,screwdriver,215,169,4,0.023669
+A4,Real World,52,shelf,290,228,13,0.057018
+A4,Real World,53,sink,345,313,1,0.003195
+A4,Real World,54,sneakers,400,400,0,0.000000
+A4,Real World,55,soda,275,234,0,0.000000
+A4,Real World,56,speaker,365,320,18,0.056250
+A4,Real World,57,spoon,230,189,13,0.068783
+A4,Real World,58,tv,225,156,18,0.115385
+A4,Real World,59,table,255,246,7,0.028455
+A4,Real World,60,telephone,370,351,2,0.005698
+A4,Real World,61,toothbrush,385,350,10,0.028571
+A4,Real World,62,toys,295,271,11,0.040590
+A4,Real World,63,trash can,365,266,7,0.026316
+A4,Real World,64,webcam,205,195,0,0.000000

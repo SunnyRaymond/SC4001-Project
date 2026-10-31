@@ -2,7 +2,7 @@
 
 更新：2026-10-31（按课程大作业的体量收缩了范围，见 3.5、3.6 与第 7 节）。已选定 handout 方向 I（Adapting Foundation Models to Unseen Domains）。本文是研究方案与执行计划，文中的"预期"都是待验证的假设，不是结果。
 
-**进度（2026-10-31）：** 已在 TC1 上建好环境（4.2）、下载数据、生成固定划分、提取 ViT-B/32 特征，并跑通 B0/B1（见 4.5）；超参网格已固定在 `configs/adapt.yaml`，A1、A2、A4 的主矩阵已跑完（见 4.6）；help/harm、置信度分箱、门控与对照已完成，H1、H2 已判定，第 7 节图 1–4 与主结果表已生成（见 4.7）。图 5（被改错的示例图）与 3.6 的可选项尚未做。方括号编号 [n] 对应第 8 节的参考文献。
+**进度（2026-10-31）：** 已在 TC1 上建好环境（4.2）、下载数据、生成固定划分、提取 ViT-B/32 特征，并跑通 B0/B1（见 4.5）；超参网格已固定在 `configs/adapt.yaml`，A1、A2、A4 的主矩阵已跑完（见 4.6）；help/harm、置信度分箱、门控与对照已完成，H1、H2 已判定，第 7 节图 1–5 与主结果表已生成（见 4.7）。3.6 的可选项尚未做。方括号编号 [n] 对应第 8 节的参考文献。
 
 ## 0. 一页摘要
 
@@ -296,6 +296,9 @@ sbatch jobs/zero_shot.sbatch ViT-B-32-quickgelu
 - **全局混合 C1 在 A1、A2 上几乎每组都赢过 G1。** 这与 3.3 的预判一致：概率空间混合本身已有隐式的逐样本效应，而且还能利用适配输出在中等置信区间的信息。A4 上来源域选出的 w 大多为 0，C1 ≈ 未门控。
 - 来源域选出的 τ：A1 偏低（0.3–0.7），A2、A4 偏高（0.7–0.9）。门控曲线（图 4）显示，A2、A4 把前约 50% 高置信图交回 B0 时准确率几乎不变：这些图上适配本来就不改动预测。
 - K=4 主结果表见 `results/<backbone>/main_table_k4.csv`：B0 79.63；A2 82.99（harm 3.74）、A2+C1 83.24（harm 2.43）；A1+G1 80.39，仍低于未门控的 A2。
+- **失败分析（A2，K=4；图 5 与 `harm_by_class_k4.csv`）：** 被改错最多的类集中在外观相近的办公/电子用品：monitor、laptop、computer、pen、folder 在多个域都排在前列，Clipart 的 monitor 有 106/414 个 B0 判对的图被改错。改错后的预测也集中：5 seeds 共 2,502 张被改错的图里，错成 computer 的占 7.5%、marker 5.1%、tv 4.2%。图 5 的 16 张随机样本中，不少图的 c(x) 只有 0.1–0.4，即 B0 本来就是"低置信地判对"，置信度门控恰好不会保护这类图。
+  - 图 5 由 `sbatch jobs/plot_examples.sbatch` 在 TC1 上生成（原图只在集群上），用时数秒；运行前须把 `results/<backbone>/` 中的 `zero_shot_per_image.csv` 与 `adapt_per_image.npz` 同步到集群。
+  - 样本为固定 seed 的随机抽样，包含 Art 域一张带血刀的插画（数据集原图）；如报告中不合适，可换 `--seed` 重抽并注明。
 - **对报告的含义：** 主结论应写成"harm 真实存在且集中在中低置信区间；置信度能识别它，但简单的硬门控在少样本下不如全局混合"，而不是"门控有效"。3.6 的 VRF 式加权正好检验"比 MSP 更好的信号"能否让逐样本组合胜过全局混合，建议作为可选项的首选。
 
 ## 5. 代码结构
@@ -314,6 +317,7 @@ scripts/
   analyze.py             # help/harm、置信度分箱、H1 判定 → flips/conf_bins/h1.csv
   gating.py              # G1、G2、C1–C3，τ 与 w 在来源域上选，门控曲线、H2 配对差值
   plot.py                # 第 7 节图 1–4 → figures/<backbone>/，K=4 主结果表
+  plot_examples.py       # 图 5 被改错的示例图与按类 harm 统计；需原图，在 TC1 上跑
 jobs/                    # setup_env.sh 与 sbatch 脚本
 splits/                  # 固定划分与每类数量（提交到 git，全组共用）
 results/                 # 逐图预测与汇总表（只存小文件）
@@ -436,5 +440,6 @@ figures/                 # 报告用图（PNG）
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）在 TC1 上搭建环境，编写 `configs/`、`scripts/`、`jobs/`，下载数据并跑通 B0/B1。核实方式：类名与各域图片数对照 Hugging Face 数据卡与 3.1；检查 CLIP 预处理与 logit scale；确认各 seed 的支持池与测试集不重叠。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `configs/adapt.yaml` 与 `scripts/run_experiments.py`，跑完 A1、A2、A4 主矩阵。网格先于任何适配结果提交（2ccc21d）。核实方式：断言支持集标签与类别一致；检查 λ 最小时 lbfgs 收敛；逐格检查选中值是否落在网格边缘。
 - **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `analyze.py`、`gating.py`、`plot.py`，完成 help/harm、置信度分箱、门控与对照并出图。核实方式：G1 在保留率 0 与 100% 时分别等于未门控与 B0（图 4 两端）；逐图检查图例与标注不遮挡数据。
+- **2026-10-31：** 使用 Claude Code（Claude Opus 5.5）编写 `plot_examples.py` 与 `jobs/plot_examples.sbatch`，在 TC1 上生成图 5 与按类 harm 统计。核实方式：逐张查看图 5，确认标注的真类与 B0 判对、A2 判错一致。
 - **团队决策：** 2026-10-29 选定方向 I；2026-10-31 决定按课程大作业的体量收缩范围。研究问题、假设与实验设计将在组内讨论后确认。
 - **待补充：** 后续编码、调试、写作中的 AI 使用情况与核实方式。
