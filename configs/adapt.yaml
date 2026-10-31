@@ -1,0 +1,37 @@
+# Adaptation methods, gating and their hyperparameter grids (README 3.3, 3.4).
+# Fixed and committed before any adaptation result was seen, on top of base.yaml.
+# Do not edit after results exist; add a new file instead and say why in git.
+
+# Text prototypes used wherever an adapter or gate needs zero-shot: the A2 init,
+# the A4 zero-shot term, and p_zs / c(x) in G1, G2, C1, C2. B0 is the reference.
+zero_shot_prototype: b0
+
+# Every grid is searched by leave-target-out selection: for target domain d and
+# shot K, simulate the same K-shot task on each of the other three domains with
+# splits.source_seeds, and keep the config with the highest mean source accuracy.
+# Ties go to the earlier config in grid order.
+methods:
+  A1:  # multinomial logistic regression, L2-regularised, sklearn lbfgs from zero init
+    # Objective: mean cross-entropy + lam/2 * ||W||^2 (bias not penalised).
+    # Convex, so the initialisation does not change the solution.
+    grid:
+      lam: [1.0e-5, 1.0e-4, 1.0e-3, 1.0e-2, 1.0e-1]
+    max_iter: 2000
+  A2:  # linear probe initialised at the zero-shot text prototypes, then trained freely
+    # logits = logit_scale * f @ W.T, W initialised to the prototypes, no bias.
+    # Full-batch Adam on mean cross-entropy, no weight decay (unconstrained CLAP).
+    grid:
+      lr: [1.0e-4, 1.0e-3, 1.0e-2]
+      steps: [50, 200, 500]
+    adam: {beta1: 0.9, beta2: 0.999, eps: 1.0e-8}
+  A4:  # Tip-Adapter, training-free
+    # logits = logit_scale * f @ T.T + alpha * exp(-beta * (1 - f @ F.T)) @ L
+    grid:
+      alpha: [0.5, 1.0, 2.0, 5.0]
+      beta: [1.0, 3.0, 5.5, 8.0]
+
+# p_ad = softmax of the adapter logits as trained, with no extra temperature.
+gating:
+  G1_tau: [0.3, 0.5, 0.7, 0.8, 0.9, 0.95]  # absolute zero-shot MSP; c(x) >= tau keeps B0
+  C1_w: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  C2_repeats: 20
