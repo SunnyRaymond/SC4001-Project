@@ -121,6 +121,30 @@ def fig_gate_curves(curves, gating, k, out):
     plt.close(fig)
 
 
+def fig_vrf_signal(signal, out):
+    """AUROC of each per-image signal for 'B0 is wrong' (A2's failure set; A1's is nearly the same)."""
+    d = signal[signal.method == "A2"].groupby("K")[["auroc_msp", "auroc_vrf_dist", "auroc_random_dist"]].mean()
+    series = [("auroc_msp", "B0 confidence (MSP)", "#2a78d6"),
+              ("auroc_vrf_dist", "distance to failure set (VRF)", "#eb6834"),
+              ("auroc_random_dist", "distance to random support subset", "#1baf7a")]
+    fig, ax = plt.subplots(figsize=(5, 2.8))
+    width = 0.26
+    for i, (col, name, color) in enumerate(series):
+        x = [j + (i - 1) * (width + 0.02) for j in range(len(d))]
+        ax.bar(x, d[col], width=width, color=color, label=name)
+        for xi, v in zip(x, d[col]):
+            ax.annotate(f"{v:.2f}", (xi, v), xytext=(0, 2), textcoords="offset points", ha="center",
+                        fontsize=6, color=INK2)
+    ax.axhline(0.5, color=INK2, lw=0.8, ls="--")
+    ax.set_xticks(range(len(d)), [f"K={k}" for k in d.index])
+    ax.set_ylim(0, 1)
+    ax.set_ylabel("AUROC for 'B0 wrong'")
+    fig.legend(*ax.get_legend_handles_labels(), loc="lower center", ncol=2, fontsize=7)
+    fig.tight_layout(rect=(0, 0.13, 1, 1))
+    fig.savefig(out / "fig6_vrf_signal.png", dpi=200)
+    plt.close(fig)
+
+
 def main_table(adapt, flips, gating, zs, domains, k, res):
     rows = []
     for domain in domains:
@@ -167,6 +191,8 @@ def main():
     fig_help_harm(flips, out)
     fig_conf_bins(cbins, args.k, out)
     fig_gate_curves(curves, gating, args.k, out)
+    if (res / "vrf_signal.csv").exists():
+        fig_vrf_signal(read("vrf_signal"), out)
     print(main_table(adapt, flips, gating, zs, domains, args.k, res).to_string())
     print(f"wrote figures to {out}")
 
