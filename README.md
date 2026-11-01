@@ -354,6 +354,7 @@ figures/                 # 报告用图（PNG）
 - **全局图像索引：** 按文件名排序后 parquet 分片的行序。特征、划分、逐图结果都用这个索引指代图像。
 - `data/`、`features/`、`logs/` 不进 git。特征可在一个 GPU 作业内重新生成。
 - `results/<backbone>/adapt_probs.npz`（完整 p_ad，约 85 MB）不进 git，重跑 `run_experiments.py` 即可生成，本机 CPU 约 7 分钟。
+- **提交用代码 ZIP：** `submission/SC4001_Project_Code.zip`，由 `python submission/build_zip.py` 从 git 已跟踪文件按白名单打包，根目录的 README 是英文复现说明 `submission/README.md`。不含数据、特征、`adapt_probs.npz`、LaTeX 正文与集群连接脚本。改了代码或结果后，先 `git add` 再重建。
 
 要保存**逐图预测**而不只是准确率：help/harm、置信度分箱、门控曲线都依赖逐图结果，门控与对照也是在保存的逐图概率上做后处理。
 
