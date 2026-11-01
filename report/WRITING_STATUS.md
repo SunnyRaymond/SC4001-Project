@@ -3,11 +3,11 @@
 Overleaf 最新稿已备份到本机 setup-review/overleaf-backup-2026-11-01.zip。已将 Overleaf 完成的 Related Work、Methods、Setup 和 Discussion 同步回仓库，保留原有实验数据、配置和图表数值。新增八条原始来源核对后的 BibTeX，覆盖当前所有正文引用。
 
 - GitHub 已有 Arial 矢量图和代码提交包 `submission/SC4001_Project_Code.zip`；用户收到的 ZIP 与该版本逐字节一致，压缩包 57 个文件全部通过 CRC 检查。
-- Overleaf 封面已有三位组员资料；组号仍待用户提供。Overleaf 拉取操作已在 GitHub 自动生成合并提交，保留了封面和 AI 声明。
-- AI 声明在 Overleaf 已成稿；“全组独立复现主要结果”仍需用户确认实际情况。此文件不把该事实视为已核实。
-- 合并后 Overleaf 编译 0 errors / 0 warnings；PDF 为 A4 共 13 页，正文 9 页。已检查全部页面缩略图及表格、图表、失败示例和参考文献的放大图；正文与矢量图 Arial 已嵌入，未见缺失引用。审阅 PDF 保存在工作区 output/pdf/sc4001-report-review-2026-11-01.pdf。封面组号和 AI 声明事实未确认，因此尚未标记为最终提交版。
+- Overleaf 封面已有三位组员资料，正式组号为 114。Overleaf 拉取操作已在 GitHub 自动生成合并提交，保留了封面和 AI 声明。
+- 用户于 2026-11-01 确认已经重新跑过实验。AI 声明据此写为重新运行主要实验并核对结果，不声称每位组员分别独立复现；工具名称包含 Claude Code、ChatGPT 和 Codex。
+- 合并后 Overleaf 编译 0 errors / 0 warnings；PDF 为 A4 共 13 页，正文 9 页。已检查全部页面缩略图及表格、图表、失败示例和参考文献的放大图；正文与矢量图 Arial 已嵌入，未见缺失引用。Group 114 与声明更新后再次编译通过（0 errors / 0 warnings）。最新 PDF 为工作区 output/pdf/SC4001_Group_114_Report.pdf。
 - B1 参照已从保存的逐图输出核对：K=4，B1 80.79%、A2 82.99%，相对 B1 help 6.22%、harm 4.03%。Discussion 已正确描述。无需重复训练实验。
-- 最终提交由组长完成，提交前补组号、确认 AI 声明并检查最新 PDF。
+- 最终提交由组长完成，使用填写 Group 114 且更新声明后的最新 PDF 和已校验的代码 ZIP。
 
 以下保留前一轮数值核对记录，章节分工以本页上方状态为准。
 
