@@ -1,7 +1,18 @@
 \section{Experimental Setup}
-\todo{Approx. 0.75 pages: Office-Home, 65 classes and four domains; frozen OpenAI CLIP ViT-B/32 with QuickGELU; K=1,2,4,8; five support seeds; nested support pools and fixed test sets.}
-% All hyperparameters, including mixing and gating parameters, are selected
-% on the other three domains using source seeds 0,1,2. Target support labels
-% train the adapter. Target test labels are for evaluation, not selection.
-% Report domain-macro means, seed variation and units. The four domains are
-% descriptive conditions, not independent evidence of broad generalization.
+\label{sec:setup}
+\textbf{Data and splits.}
+Office-Home contains 65 shared object classes across four visual domains~\citep{venkateswara2017officehome}. The pinned \texttt{flwrlabs/office-home} mirror used here has 15,588 images: 2,427 Art, 4,365 Clipart, 4,439 Product and 4,357 Real World. For each domain and seed $0,\ldots,4$, eight images per class form an ordered support pool. The first $K\in\{1,2,4,8\}$ images give nested support sets of 65, 130, 260 or 520 labelled images. All 520 pool images are excluded from testing even when $K<8$. Test sizes are therefore 1,907, 3,845, 3,919 and 3,837, respectively, and remain fixed across $K$ and methods within a seed. Every class retains test images; the smallest remaining class has seven.
+
+\textbf{Features and prompts.}
+We use OpenAI CLIP ViT-B/32 through \texttt{open\_clip\_torch} 3.3.0, with the QuickGELU architecture. Images undergo the returned resize and centre-crop preprocessing to $224\times224$, without training augmentation. Image and text features are normalized and cached once. Class names are lower-cased with underscores and hyphens replaced by spaces. B1 uses the domain-specific phrases \emph{an art image}, \emph{a clipart image}, \emph{a product image} and \emph{a real world image}, each followed by \emph{of a \{class\}.} Templates and dataset/model revisions are fixed in \texttt{configs/base.yaml}.
+
+\textbf{Leave-target-out selection.}
+For each target domain, $K$ and adapter, each grid point is evaluated on analogous $K$-shot tasks in the other three domains using source seeds $0,1,2$. We average these nine accuracies equally and choose the first maximum in grid order. The selected adapter configuration is then refitted on those source tasks to select G1's threshold, C1's weight and VRF's parameters. Finally, it is fitted on the target support set for each of five seeds. Source images are used to choose settings, not pooled into target adapter training. Target test labels never enter selection for that target fold; there is no target validation set. Domains rotate roles across folds, so the resulting comparisons are dependent.
+
+\textbf{Fixed grids.}
+A1 searches $\lambda\in\{10^{-5},10^{-4},10^{-3},10^{-2},10^{-1}\}$ with at most 2,000 L-BFGS iterations. A2 searches learning rates $\{10^{-4},10^{-3},10^{-2}\}$ and step counts $\{50,200,500\}$, with Adam coefficients $(0.9,0.999)$ and $\epsilon=10^{-8}$. A4 searches $\alpha\in\{0.5,1,2,5\}$ and $\beta\in\{1,3,5.5,8\}$.
+
+For combination, G1 searches $\tau\in\{0.3,0.5,0.7,0.8,0.9,0.95\}$ and C1 searches $w\in\{0,0.1,\ldots,1\}$. VRF's distance parameters use $a\in\{0.5,0.6,0.7,0.8,0.9,1,1.2\}$ and $b\in\{0.02,0.05,0.1,0.2,0.5\}$. The grids in \texttt{configs/adapt.yaml} and \texttt{configs/vrf.yaml} were committed before the corresponding experiments and were not expanded after inspecting target results.
+
+\textbf{Execution and reporting.}
+One V100 32\,GB extracts features with FP16 inference under PyTorch 2.5.1/CUDA 11.8; the remaining experiments use cached features on CPU. Environment versions are recorded in \texttt{requirements-lock.txt}. The pipeline is download/split, feature extraction, zero-shot evaluation, adapter fitting, flip analysis, gating, then VRF and distance diagnostics. Its scripts and fixed splits are included in the repository. The main matrix has $4$ domains $\times\,4$ support sizes $\times\,5$ seeds $\times\,3$ adapters, or 240 fitted/evaluated conditions. Accuracy, help and harm use equal domain weights; seed variation and paired differences are descriptive. Original predictions are retained alongside the FP16 probability cache used for gating and mixing. VRF refits the adapters and checks that the largest absolute probability difference from the cache is below $2\times10^{-3}$. Small numerical discrepancies are discussed below.
