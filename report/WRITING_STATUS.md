@@ -1,19 +1,15 @@
-# 报告初稿进度（2026-10-31）
+# 报告收尾状态（2026-11-01）
 
-本轮完成 `01-introduction.tex`、`05-results.tex`、`07-conclusion.tex` 的英文初稿，接入正文四张矢量图、K=4 综合表、门控与 VRF 配对差值表，以及附录 AUROC 图。正文引用的 CLIP、Office-Home、Tip-Adapter、negative flip、VRF、DaWin 六篇论文已查原始来源，BibTeX 位于 `references.bib`。这不代表完整文献综述已完成。
+Overleaf 最新稿已备份到本机 setup-review/overleaf-backup-2026-11-01.zip。已将 Overleaf 完成的 Related Work、Methods、Setup 和 Discussion 同步回仓库，保留原有实验数据、配置和图表数值。新增八条原始来源核对后的 BibTeX，覆盖当前所有正文引用。
 
-## 按分工继续
+- GitHub 已有 Arial 矢量图和代码提交包 `submission/SC4001_Project_Code.zip`；用户收到的 ZIP 与该版本逐字节一致，压缩包 57 个文件全部通过 CRC 检查。
+- Overleaf 封面已有三位组员资料；组号仍待用户提供。个人学号保留在 Overleaf，不随本次同步新增到 GitHub。
+- AI 声明在 Overleaf 已成稿；“全组独立复现主要结果”仍需用户确认实际情况。此文件不把该事实视为已核实。
+- 合并前 PDF 为 13 页，正文 9 页；合并后的编译、引用、Arial 字体和逐页排版需重新检查。
+- B1 参照已从保存的逐图输出核对：K=4，B1 80.79%、A2 82.99%，相对 B1 help 6.22%、harm 4.03%。Discussion 已正确描述。无需重复训练实验。
+- 最终提交由组长完成，提交前补组号、确认 AI 声明并检查最新 PDF。
 
-| 章节 | 状态 | 接下来要做 |
-| --- | --- | --- |
-| 01 Introduction | 首稿完成 | 合稿后检查 RQ、方法名和贡献范围与其他章节一致 |
-| 02 Related Work | 待文献负责人写 | 补 CoOp、CLIP-Adapter、WiSE-FT、CLAP、DomainBed 等必要引用，明确研究差别 |
-| 03 Methods | 待实验负责人写 | 用实际代码描述 A1/A2/A4、选参、G1/C1/C2、VRF/V0；已有 help/harm 定义 |
-| 04 Setup | 待实验负责人写 | 数据与固定划分、seeds、source-only 超参选择、环境和复现命令 |
-| 05 Results | 首稿完成 | B1 参照复核后补一句稳健性结论；实验负责人逐项核对 |
-| 06 Discussion | 待文献/分析负责人写 | Figure 5 失败例、外观相近类别、局限；不要重复整节 Results |
-| 07 Conclusion | 首稿完成 | 合稿后与最终结论保持一致 |
-| 08 AI Use | 待全组确认 | 根据真实工具、实际模型、用途、验证和团队决策写，不能自动声称已独立复现 |
+以下保留前一轮数值核对记录，章节分工以本页上方状态为准。
 
 ## 本轮核实和口径修正
 
@@ -27,7 +23,3 @@
 - 配对表中的 SD 描述 80 个域×K×seed 条件的差值变化。这些条件共享图像，不能当作 80 个独立观测做显著性推断。
 - 主表未门控行采用 `flips.csv` 中原始 class predictions，门控/混合与配对表采用 `gating_summary.csv` 中 FP16 概率缓存的后处理结果；FP16 并列概率会偶尔改变 argmax。K=4 的方法平均准确率两种表示相差不到 0.004 pp，但个别域×K×seed 最大约 0.105 pp。正文已明确口径，避免用缓存结果悄悄替换原始 baseline。原始 baseline 的 A2 K=4 为 82.99%。
 - VRF 的距离 AUROC 约 0.62，弱于 MSP 的约 0.89；“更强的逐样本信号”应改为“另一种信号”。VRF 对随机失败集 V0 的均值优势极小，不能笼统称为显著更好。
-
-## 待完成的证据
-
-B1 作为参照的 adapter 翻转复核、失败案例人工检查、其余章节文献核查、独立复现、封面组号与姓名、全组对 AI 记录的确认仍待完成。正文没有把这些事项写成已完成。

@@ -1,10 +1,68 @@
 \section{Methods}
-\todo{Approx. 1.5 pages: define B0/B1, A1/A2/A4, G1, C1, C2, the oracle, and the VRF-style variant. Follow the actual scripts and fixed configs.}
-For an image with label $y$, let $\hat y_0$ and $\hat y_a$ denote the zero-shot and adapted predictions. Define
+\label{sec:methods}
+\subsection{Frozen features and adaptation}
+Let $f(x)\in\mathbb{R}^{512}$ be the unit-normalized CLIP image feature and $t_c$ the unit-normalized text prototype for class $c$. Write $T$ for the matrix with rows $t_c^\top$, and $\mathcal{S}$ for the labelled support set. B0 uses the template \texttt{a photo of a \{class\}.} Its logits and probabilities are
+\begin{equation}
+ z_0(x)=sTf(x), \qquad p_0(x)=\operatorname{softmax}(z_0(x)),
+\end{equation}
+where $s=100$ is the loaded model's logit scale. B1 substitutes a fixed domain-specific template, such as \texttt{a clipart image of a \{class\}.} B0 supplies the prototypes and reference predictions for all adapters and combination methods.
+
+\textbf{A1: ordinary linear probe.}
+For $n=|\mathcal{S}|$, A1 fits logits $Wf(x)+b$ by minimizing
+\begin{equation}
+ \frac{1}{n}\sum_{(x_i,y_i)\in\mathcal{S}}
+ \operatorname{CE}(Wf(x_i)+b,y_i)+\frac{\lambda}{2}\|W\|_F^2 .
+\end{equation}
+The implementation uses multinomial logistic regression with L-BFGS and an unpenalized bias; scikit-learn's inverse regularization parameter is $1/(\lambda n)$. It does not initialize from text prototypes.
+
+\textbf{A2: zero-shot-initialized linear probe.}
+A2 initializes $W=T$ and minimizes mean support cross-entropy for logits $sWf(x)$ using full-batch Adam. There is no bias, weight decay, or weight renormalization after updates. The learning rate and number of steps control how far optimization moves from the initial classifier. Thus, A1 and A2 differ in optimization, scaling and regularization as well as initialization.
+
+\textbf{A4: training-free Tip-Adapter.}
+Support features and one-hot class labels form a retrieval cache~\citep{zhang2022tip}. Its logits are
+\begin{equation}
+ z_4(x)=z_0(x)+\alpha\sum_{(x_i,y_i)\in\mathcal{S}}
+ \exp\{-\beta[1-f(x)^\top f(x_i)]\}\,e_{y_i},
+\end{equation}
+where $e_{y_i}$ is a one-hot vector. The encoder and cache are not trained. For each adapter, $p_a$ is the softmax of its logits, without additional temperature calibration.
+
+\subsection{Combining zero-shot and adapted predictions}
+Let $\hat y_0=\arg\max_c p_{0,c}$, $\hat y_a=\arg\max_c p_{a,c}$ and $c(x)=\max_c p_{0,c}(x)$. The hard confidence gate G1 is
+\begin{equation}
+ \hat y_{\mathrm{G1}}(x)=
+ \begin{cases}
+  \hat y_0(x), & c(x)\geq\tau,\\
+  \hat y_a(x), & c(x)<\tau .
+ \end{cases}
+\end{equation}
+The fixed-mixing control C1 predicts from
+\begin{equation}
+ p_{\mathrm{C1}}(x)=w p_0(x)+(1-w)p_a(x).
+ \label{eq:mix}
+\end{equation}
+Here $w$ is shared by all test images for a given target domain, support size and adapter. G2 replaces $w$ with $c(x)$ and has no fitted coefficient. C2 randomly assigns exactly as many images to B0 as G1 does, averaging accuracy over 20 draws. This isolates the value of confidence from the effect of retaining more zero-shot predictions. C3 is an oracle top-1 selector: it is correct whenever either constituent prediction is correct. It bounds selectors between those two predictions, not arbitrary probability ensembles.
+
+\textbf{VRF-style weighting and V0.}
+We adapt VRF's failure-set construction~\citep{zhu2024vrf} to frozen features:
+\begin{equation}
+ \mathcal{V}=\{f(x_i):(x_i,y_i)\in\mathcal{S},\
+             \hat y_a(x_i)=y_i,\ \hat y_0(x_i)\ne y_i\}.
+\end{equation}
+Let $d(x)$ be the Euclidean distance to the $k_{\mathrm{nn}}$-th nearest member of $\mathcal{V}$. We use $k_{\mathrm{nn}}=\max(1,\lfloor0.001|\mathcal{V}|\rfloor)$, which is one at all tested support sizes. With $\sigma$ denoting the logistic function,
+\begin{equation}
+ \omega(x)=\sigma\!\left(\frac{a-d(x)}{b}\right),\qquad
+ p_{\mathrm{VRF}}(x)=\omega(x)p_a(x)+(1-\omega(x))p_0(x).
+\end{equation}
+An empty failure set returns B0. V0 replaces $\mathcal{V}$ with a uniformly sampled support subset of equal size, retains the selected $a,b$, and averages 20 draws. It tests the contribution of failure-set membership rather than providing a separately tuned competitor.
+
+\subsection{Flip analysis and planned comparisons}
+For a test set of size $N$, define
 \begin{align}
-\mathrm{help} &= \Pr(\hat y_0\ne y,\ \hat y_a=y),\\
-\mathrm{harm} &= \Pr(\hat y_0=y,\ \hat y_a\ne y).
+ \mathrm{help} &= \frac{1}{N}\sum_{i=1}^{N}
+   \mathbf{1}[\hat y_0(x_i)\ne y_i,\ \hat y_a(x_i)=y_i],\\
+ \mathrm{harm} &= \frac{1}{N}\sum_{i=1}^{N}
+   \mathbf{1}[\hat y_0(x_i)=y_i,\ \hat y_a(x_i)\ne y_i].
 \end{align}
-Then $\Delta\mathrm{accuracy}=\mathrm{help}-\mathrm{harm}$. Conditional harm divides the harm count by the number of correct zero-shot predictions; it has a different denominator from the harm rate.
-% A2: prototype-initialized weights, full-batch Adam, no bias or explicit
-% regularization in fit_a2. Do not copy the planned regularization from README.
+Then $\Delta\mathrm{accuracy}=\mathrm{help}-\mathrm{harm}$. Conditional harm divides the harm count by the number of B0-correct images, rather than by $N$. Confidence deciles are formed separately within each domain and split seed; all methods and support sizes share those bins.
+
+The repository fixed three checks before their respective result stages. H1 predicts non-positive net gain in the highest-confidence 20\%, rejected for an adapter--domain--$K$ condition if a majority of seeds have positive gain. H2 expects G1 to beat matched random gating, with its mean gain over the ungated adapter ordered A1 $>$ A2 $>$ A4. H3 expects A2's VRF variant to beat C1 on a majority of the 80 paired conditions and to outperform V0. These are descriptive decision rules, not significance tests. Diagnostic gate curves sweep test-set retention fractions; only source-selected operating points enter method comparisons.

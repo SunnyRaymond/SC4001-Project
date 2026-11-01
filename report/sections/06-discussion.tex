@@ -1,6 +1,27 @@
 \section{Discussion}
-\todo{Approx. 1.25 pages: explain overlapping help/harm in low-confidence images, examine failure examples, and discuss the strength of probability mixing.}
-% Figure 5: fig5_harmed_A2_k4.png. Inspect the current example selection.
-% Limitations: one dataset/backbone; four domains; uncalibrated confidence;
-% selected parameters at grid boundaries; frozen-feature, k=1 VRF variant.
-% README 7.8: B1-referenced flip analysis is still outstanding.
+\label{sec:discussion}
+\textbf{A better average does not preserve every correct answer.}
+The frozen encoder rules out feature drift during these experiments: negative flips arise from changes to classification or combination on the same image features. A2's advantage over A1 is consistent with the usefulness of zero-shot information, but does not isolate initialization as its cause, since their objectives and optimization also differ. Similarly, A4's smaller harm comes with fewer corrections. Choosing an adapter therefore involves an accuracy--harm trade-off, not a guarantee that every image benefits.
+
+\textbf{Failure examples and the limits of confidence.}
+The class-level counts reveal repeated confusion among related objects. At $K=4$, A2 harms 106 of 414 B0-correct Clipart monitor evaluations and 57 of 264 Real World monitor evaluations, pooled over five seeds. These are image--seed evaluations, not counts of distinct images. Figure~\ref{fig:failures} illustrates two monitor images changed to television and computer, despite correct B0 predictions. The visual overlap makes these errors plausible, but the examples do not establish their cause or imply that every negative flip is a fine-grained confusion. In particular, B0 can be correct at low confidence, exactly where G1 delegates to the adapter. A high AUROC for detecting B0 errors is therefore insufficient: choosing between models requires predicting their \emph{relative} correctness.
+
+\begin{figure}[htbp]
+\centering
+% First two Real World panels of the existing seed-0 random sample.
+% PNG metadata: 1600 x 1880 pixels at 200 dpi; trim is in PostScript points.
+\includegraphics[width=0.72\linewidth,trim=0bp 0bp 288bp 520bp,clip]{fig5_harmed_A2_k4.png}
+\caption{Two illustrative negative flips for A2 at $K=4$. These are the first two Real World examples in the stored seed-0 random sample of harmed images; no new sampling was performed. Titles give dataset labels, and the annotations show B0 confidence and A2 predictions.}
+\label{fig:failures}
+\end{figure}
+
+\textbf{Why fixed mixing is a useful baseline.}
+Equation~\ref{eq:mix} preserves both distributions, allowing their class-specific margins to influence the decision. A hard gate discards one distribution entirely. This offers an explanation for C1's advantage over G1 for A1 and A2, while A4's retained zero-shot term leaves less room for either safeguard. It does not establish that fixed mixing is universally optimal. The VRF variant adds little over matched random-set weighting, and its small failure sets provide a weak distance signal. Since both failure-set size and adapter quality change with $K$, these observations do not isolate a causal effect of set size.
+
+\textbf{Sensitivity to the reference classifier.}
+A post-hoc check using the same stored predictions replaces B0 with the stronger domain-prompt baseline B1; no model or hyperparameter is changed. At $K=4$, B1 has 80.79\% accuracy and A2 has 82.99\%, with 6.22\% help and 4.03\% harm relative to B1. Thus, positive net benefit and negative flips both remain, although their magnitudes depend on the reference. At one shot, A2 (80.55\%) and A4 (80.40\%) trail B1. This supports testing inexpensive prompt changes before spending labels. It does not establish the performance of mixing with B1, because the combination methods were constructed and selected using B0.
+
+\textbf{Limitations and practical implications.}
+The evidence covers one dataset, one frozen backbone and at most eight labels per class; four domains do not support broad statistical claims about unseen domains. CLIP's pretraining overlap with these images is unknown. Hyperparameter optima may lie outside the fixed grids: A4 selects the largest $\alpha$ throughout, and A2 selects the smallest learning rate. We leave those grids unchanged and interpret the results as comparisons within that search space. Confidence is uncalibrated; prior work shows that calibration can affect ensemble trade-offs~\citep{kumar2022calibrated}. Our nearest-neighbour VRF variant also differs from full fine-tuning with a larger failure set.
+
+Numerical precision further limits interpretation of tiny differences. Comparing original adapter predictions with the FP16-cache-derived predictions changes accuracy in 21 of 240 conditions, by at most 0.105 pp; mean absolute change is 0.0031 pp. The report distinguishes the two representations, and improvements of only a few hundredths of a point should not be treated as decisive. For this evaluated setting, A2 with fixed probability mixing is a useful compromise, while reporting both help and harm exposes failures that average accuracy conceals.
